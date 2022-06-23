@@ -1,19 +1,29 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>populaires</ion-title>
+    <ion-title>Movies</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-list *ngFor="let popularity of popularity; index as i">
-    <ion-avatar>
-      <ion-img [src]="'https://image.tmdb.org/t/p/w500' + popularity.poster_path">
-      </ion-img>
-    </ion-avatar>
+  <ion-header>
+      <ion-title>Populaires</ion-title>
+  </ion-header>
 
-    <ion-label>
-      <h2>{{ popularity.original_title }}</h2>
-    </ion-label>
-  </ion-list>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="6" *ngFor="let popularity of popularity; index as i">
+        <div>
+          <ion-img [src]="'https://image.tmdb.org/t/p/w500' + popularity.poster_path"></ion-img>
+
+          <ion-title size="small">{{ popularity.original_title }}</ion-title>
+        </div>
+
+        <ion-text size="small">{{ popularity.release_date }}</ion-text>
+
+        <ion-icon name="star"></ion-icon>
+        <ion-text size="small">{{ popularity.vote_average }}</ion-text>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 
 </ion-content>
