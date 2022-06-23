@@ -5,5 +5,15 @@
 </ion-header>
 
 <ion-content>
+  <ion-list *ngFor="let popularity of popularity; index as i">
+    <ion-avatar>
+      <ion-img [src]="'https://image.tmdb.org/t/p/w500' + popularity.poster_path">
+      </ion-img>
+    </ion-avatar>
+
+    <ion-label>
+      <h2>{{ popularity.original_title }}</h2>
+    </ion-label>
+  </ion-list>
 
 </ion-content>
