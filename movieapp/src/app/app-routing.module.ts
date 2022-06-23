@@ -11,6 +11,18 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'populaires',
+    loadChildren: () => import('./populaires/populaires.module').then( m => m.PopulairesPageModule)
+  },
+  {
+    path: 'top',
+    loadChildren: () => import('./top/top.module').then( m => m.TopPageModule)
+  },
+  {
+    path: 'actuellement',
+    loadChildren: () => import('./actuellement/actuellement.module').then( m => m.ActuellementPageModule)
+  },
 ];
 
 @NgModule({
