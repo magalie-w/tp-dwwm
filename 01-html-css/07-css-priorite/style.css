@@ -1,0 +1,51 @@
+section{ /* 1 010 */
+    background-color: red !important;
+}
+
+#container{ /* 11 000 */
+    background-color: yellow !important;
+}
+
+/* Un id container et une classe en même temps */
+#container.container{ /* 11 100 */
+    background-color: blue !important;
+}
+
+/* Tous les p qui ont un attribut "salut" */
+p[title="salut"]{
+    background-color: green;
+}
+
+/* Un .container dans un #container */
+#container .container{}
+
+/* Un .container DIRECTEMENT enfant d'un #container */
+#container > .container{}
+
+/* Sélection les p précédés d'un p (B,C,E) */
+#content p + p{
+    display:none;
+}
+
+#content p:hover + p{
+    display: block;
+    background-color: purple;
+}
+
+/*  Sélectionne les p précédés d'un p (B, C, D, E) */
+#content p ~ p{
+    color:red;
+}
+
+/* Le premier p du parent #content */
+#content p:first-child{
+    border:1px solid green;
+}
+
+/* Le dernier p du parent #content */
+#content p:last-child{}
+
+/* Le 3 eme du parent #content */
+#content p:nth-child(3){
+    border:1px solid yellow;
+}

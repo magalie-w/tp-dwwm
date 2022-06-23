@@ -1,0 +1,92 @@
+`<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exos-06</title>
+
+    <style>
+        [v-cloak] {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app" v-cloak>
+        <div>
+            <input type="number" v-model="number1">
+            <input type="number" v-model="number2">
+            <p v-if="result">{{ result }}</p>
+        </div>
+
+        <div>
+            <input type="text" v-model="firstname"><input type="text" v-model="name">
+            <input type="text" v-model="fullName">
+            {{ fullName }}
+        </div>
+
+        <div>
+            <input type="number" v-model="code" max="7" min="0">
+            <label for="read">Read</label>
+            <input type="checkbox" v-model="read" id="read">
+            <label for="write">Write</label>
+            <input type="checkbox" v-model="write" id="write">
+            <label for="execute">Execute</label>
+            <input type="checkbox" v-model="execute" id="execute">
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/vue@3"></script>
+
+    <script>
+        var app = Vue.createApp({
+            data() {
+                return {
+                    number1: 0,
+                    number2: 0,
+                    name: 'Mota',
+                    firstname: 'Fiorella',
+                    read: false,
+                    write: false,
+                    execute: false,
+                };
+            },
+            computed: {
+                code: {
+                    get() {
+                        let code = 0;
+                        // if
+                        code += this.read ? 4 : 0;
+                        code += this.write ? 2 : 0;
+                        code += this.execute ? 1 : 0;
+
+                        return code;
+                    },
+                    set(value) {
+                        // if
+                        this.execute = value >= 7 || value == 5 || value == 3 || value == 1;
+                        this.write = value >= 6 || value == 3 || value == 2;
+                        this.read = value >= 4 || value == 5;                
+                    },
+                },
+                fullName: {
+                    get() { return this.firstname + ' ' + this.name },
+                    set(value) {
+                        let names = value.split(' '); // ['Fiorella', 'Mota']
+                        this.firstname = names[0];
+                        this.name = names[1];
+                    },
+                },
+                result() {
+                    let number1 = this.number1.toString(); // Transforme nombre en chaîne
+                    let dozens = number1[number1.length - 2] || 0; // récupère la dizaine ou 0
+                    let unity = this.number2 % 10; // Récupère l'unité
+
+                    return dozens + unity; // Concatène 2 chaines
+                }
+            }
+        }).mount('#app');
+    </script>
+</body>
+</html>`

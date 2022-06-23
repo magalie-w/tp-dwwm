@@ -1,0 +1,44 @@
+body{
+    height: 5000px;
+}
+
+.square{
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
+}
+
+.little-square{
+    width: 50px;
+    height: 50px;
+}
+
+.pink{
+    background-color: pink;
+    position:absolute;
+    bottom:0;
+    right: 0;
+}
+
+.red{
+    background-color: red;
+    /*En position relative, un élément peut se positionner par rapport à son emplacement initial*/
+    position: relative;
+    top:50px;
+    left:50px;
+    z-index: 1; /*Le chiffre change pour l'ordre et il faut obligatoirement un position pour déclarer un z-index*/
+}
+
+.green{
+    background-color: green;
+    /* En position absolute, un élément se positionne par rapport à son parent relative le plus proche (body par défaut) */
+    position: absolute;
+    bottom:0;
+    right: 0;;
+}
+
+.blue{
+    background-color: blue;
+    /* Le position fixed est comme un absoute sauf qu'il rest fixe lors du scroll */
+    position: fixed;
+}

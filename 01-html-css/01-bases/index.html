@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <title>Ma première page HTML</title>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <!--Retour de l'ancre top-->
+    <div id="top"></div>
+
+    <!---Titre de niveau 1 (1 à 6)-->
+    <h1>Hello World</h1>
+    <h2>Un sous-titre</h2>
+
+    <!--Alt + shift + p pour tout ré-indenter
+    shift + tab pour ré-indenter plusieurs lignes -->
+
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam ut, accusamus quae maxime, possimus, vitae ea
+        labore aspernatur aliquam impedit voluptatem accusantium corporis adipisci obcaecati fugit voluptatum vero eum
+        quas.
+    </p>
+
+    <p>
+        Un texte &nbsp; qui passe <br/>à la ligne
+        <!-- $nbsp; Faire un espace-->
+    </p>
+
+    <!--Chemin absolue : htttp://site.com/image.jpg (marche partout comme c'est un lien)-->
+    <!--Chemin relatif : image.jpg (ne marche que si il y a l'image dans le fichier)-->
+    <img src="chat.jpg" alt="image chat">
+
+    <!--Listes non-ordonnées-->
+    <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+
+    <!--Listes ordonnées-->
+    <ol>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ol>
+
+    <!--Exos pratique-->
+    <ol>
+        <li>
+            <span>Chien</span>
+
+            <ul>
+                <li>Jack Russel</li>
+                <li>Doberman</li>
+                <li>Husky</li>
+            </ul>
+        </li>
+
+        <li>
+            <span>Chat</span>
+
+            <ul>
+                <li>Gouttière</li>
+                <li>Européen</li>
+                <li>Persan</li>
+            </ul>
+        </li>
+
+        <li>
+            <span>Oiseau</span>
+
+            <ul>
+                <li>Pigeon</li>
+                <li>Perroquet</li>
+                <li>Roucoups</li>
+            </ul>
+        </li>
+    </ol>
+
+    <pre>
+        &lt;h1&gt; Afficher les chevronts &lt;h1&gt;
+    </pre>
+
+    <p>
+        <strong>En gras</strong> <br/>
+        <em>En italique</em> <br/>
+        <s>Texte barré</s> <br/>
+        <mark>Surligne</mark> <br/>
+        <u>Souligner</u>
+    </p>
+
+    <!--Lien relatif (interne)-->
+    <a href="index.html">Accueil</a>
+
+    <!--Lien absolu (externe)-->
+    <a href="https://google.fr" target="_blank">Google</a>
+
+    <!--Ancre sur la page-->
+    <a href="#top">Retour en haut de la page</a>
+
+    <br/><br/>
+
+    <!--Tableau-->
+    <table border="1px" cellspacing="0" cellpadding="20px">
+        <thead>
+            <tr> <!--Une ligne-->
+                <th>Nom</th> <!--Une colonne-->
+                <th>Année de sortie</th>
+                <th>Acteurs</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>Spiderman : Far From Home</td>
+                <td align="center">2019</td>
+                <td>Tom Holland</td>
+            </tr>
+
+            <tr>
+                <td>The Batman</td>
+                <td align="center" colspan="2">2022</td>
+            </tr>
+        </tbody>
+
+        <caption>Des films</caption>
+
+    </table>
+
+
+</body>
+
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exos-01</title>
+</head>
+<body>
+
+    <h1 id="tittle">Intégrateur</h1>
+
+    <div id="date"></div>
+
+    <script>
+
+        //1. Ecrire un script qui change le contenu d'un h1 toutes les 5 secondes avec les valeurs suivantes: Intégrateur, Développeur, Administrateur système.    
+        
+        //SET TIMEOUT
+        // var tittle = document.getElementById("tittle");
+        // var tittle = document.getElementById("tittle");
+        
+        // var change1 = setTimeout(function () {
+        //     tittle.textContent = "Développeur";
+        // }, 5000);
+
+        // var change2 = setTimeout(function () {
+        //     tittle.textContent = "Administrateur système";
+        // }, 10000);
+        
+
+        //SET INTERVAL
+        var tittle = document.getElementById("tittle");
+
+        setInterval(function () {
+            if (tittle.textContent == "Intégrateur") {
+                tittle.textContent = "Développeur";
+            }
+
+            else if (tittle.textContent == "Développeur") {
+                tittle.textContent = "Administateur système";
+            }
+        }, 5000);
+
+
+        //2. Ecrire un script qui change la couleur de fond du body au bout de 5 secondes avec une transition
+        setTimeout(function () {
+            document.body.style.transition = "0.5s";
+            document.body.style.backgroundColor = "lightblue";
+        }, 1000);
+
+
+        //3. Renseignez vous sur la classe Date et essayez d'afficher l'heure sur une page au format HH:MM:SS
+        //4. Rafraichir la valeur de l'heure toutes les secondes
+        setInterval(function () {
+            var today = new Date();
+            var heures = today.getHours();
+            var minutes = today.getMinutes();
+            var secondes = today.getSeconds();
+            
+            console.log(heures + "h" + minutes + "m" + secondes + "s");
+            date.textContent = heures + "h" + minutes + "m" + secondes + "s";
+        }, 1000);
+
+        
+
+    </script>
+    
+</body>
+</html>

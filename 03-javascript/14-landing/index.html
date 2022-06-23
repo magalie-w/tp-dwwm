@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+    <!-- Plugging JS Slick -->
+    <link href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" rel="stylesheet">
+
+     <!-- Pluggin JS Slick THeme -->    
+    <link href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" rel="stylesheet">
+
+    <style>
+        .slide {
+            width: 300px;
+            height: 100%;
+            object-fit: cover;
+        }
+    
+        .slide img {
+            width: 300px;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
+
+</head>
+
+<body class="bg-info">
+
+    <!-- SLICK -->
+    <div class="container">
+        <div class="slider">
+            <div class="slide">
+                <h3>Du texte</h3>
+            </div>
+
+            <div class="slide">
+                <img src="img/lazyfonz2.png" alt="">
+            </div>
+
+            <div class="slide">
+                <img src="img/lazyfonz3.png" alt="">
+            </div>
+        </div>
+
+
+        <!-- ISOTOPE -->
+        <ul class="nav nav-pills mb-4">
+            <li class="nav-item">
+                <a class="nav-link text-white" href="#" data-filter="*">Tout</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link text-white" href="#" data-filter=".html">HTML</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link text-white" href="#" data-filter=".php">PHP</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link text-white" href="#" data-filter=".js">JS</a>
+            </li>
+        </ul>
+
+        <div class="row grid">
+
+            <div class="col-lg-4 html">
+                <div class="card">
+                    <a href="https://lipsum.app/id/1/1024x768" data-fancybox="gallery">
+                        <img class="img-fluid" src="https://lipsum.app/id/1/1024x768" alt="">
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-lg-4 html">
+                <div class="card">
+                    <a href="https://lipsum.app/id/1/1024x768" data-fancybox="gallery">
+                        <img class="img-fluid" src="https://lipsum.app/id/1/1024x768" alt="">
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-lg-4 js">
+                <div class="card">
+                    <a href="https://lipsum.app/id/1/1024x768" data-fancybox="gallery">
+                        <img class="img-fluid" src="https://lipsum.app/id/1/1024x768" alt="">
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-lg-4 php">
+                <div class="card">
+                    <a href="https://lipsum.app/id/1/1024x768" data-fancybox="gallery">
+                        <img class="img-fluid" src="https://lipsum.app/id/1/1024x768" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- AOS -->
+        <div class="'row" style="margin: 300px 0">
+            <div class="square w-50 py-4 bg-primary"></div>
+        </div>
+
+        <div class="row justify-content-end" style="margin: 300px 0">
+            <div class="square w-50 py-4 bg-danger"></div>
+        </div>
+
+        <div class="row" style="margin: 300px 0">
+            <div class="square w-50 py-4 bg-secondary"></div>
+        </div>
+    </div>
+
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Plugging JS Slick -->
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+    <!-- Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
+    <!-- AOS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+
+    <!-- Isotope -->
+    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+
+    <!-- FANCYBOX -->
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.js"></script>
+
+    <script>
+
+        // SLICK
+        $('.slider').slick({
+            slidesToShow: 2,
+            slidesToScroll: 4,
+            dots: true,
+        });
+
+
+        // ISOTOPE
+        $("grid").isotope(); //Initialise le système de filtres Isotope
+
+
+        $(".nav-pills a").click(function () {
+            //$(this) est le a qui est cliqué
+            $(".grid").isotope({filter: $(this).data("filter") });
+            $(".nav-pills a").removeClass("active");
+            $(this).addClass("active");
+        });
+
+        // AOS
+    </script>
+</body>
+</html>

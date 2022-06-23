@@ -1,0 +1,59 @@
+#rectangleBleu{
+    width: 200px;
+    height: 90px;
+    background-color: blue;
+    position: absolute;
+}
+
+#rectangleRouge{
+    width: 200px;
+    height: 90px;
+    top: 75px;
+    background-color: red;
+    position: absolute;
+}
+
+
+#carreJaune{
+    width: 250px;
+    height: 250px;
+    top: 150px;
+    background-color: yellow;
+    position: absolute;
+}
+
+#rectangleViolet{
+    width: 90px;
+    height: 200px;
+    top: 1050px;
+    background-color: violet;
+    position: absolute;
+}
+
+#rectangleOrange{
+    width: 90px;
+    height: 200px;
+    top: 750px;
+    background-color: orange;
+    position: absolute;
+}
+
+#triangleVert{
+    top:420px;
+    display : inline-block;
+    height : 0;
+    width : 0;
+    border-right : 100px solid transparent;
+    border-bottom : 200px solid green;
+    border-left : 100px solid transparent;
+    position: absolute;
+}
+
+#cercleRose{
+    top: 650px;
+    width: 250px;
+    height: 250px;
+    background-color: pink;
+    border-radius:50%;
+    position: absolute;
+}

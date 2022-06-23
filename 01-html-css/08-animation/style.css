@@ -1,0 +1,79 @@
+body{
+    background-image: url("img/galaxy.png");
+    margin:0;
+    height: 100vh; /* Pour prendre tout la hauteur */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Libre Franklin', sans-serif;
+    overflow:hidden; /* Pour ne pas qu'il y ait de scrolle */
+}
+
+audio{
+    display: none;
+}
+
+.long-time-ago{
+    color:#4bd5ee;
+    font-size:32px;
+    opacity:0;
+    animation-name: long-time-ago; /* Pour dire qu'on utilise l'animation long-time-ago */
+    transition-delay: 1s;
+    animation-duration: 4s;
+    animation-timing-function: ease-out;
+}
+
+/* Déclarer l'animation pour l'opacité */
+@keyframes long-time-ago {
+    0%{
+        opacity:0;
+    }
+
+    70%{
+        opacity :1;
+    }
+
+    100%{
+        opacity:0;
+    }
+}
+
+.crawl{
+    font-size:64px;
+    color:#ffff66;
+    text-align: justify;
+
+    width: 800px;
+    height: 3200px;
+
+    position: absolute;
+    bottom: 0;
+
+    transform: perspective(300px) rotateX(25deg);
+    transform-origin: center bottom;
+}
+
+.crawl div{
+    position: absolute;
+    top:100%;
+    animation-name: crawl;
+    animation-duration: 44s;
+    animation-delay: 5s;
+}
+
+/* Déclarer l'animation pour faire monter le texte */
+@keyframes crawl {
+    0%{
+        top:100%;
+        opacity: 1;
+    }
+
+    80%{
+        opacity: 1;
+    }
+
+    100%{
+        top:0%;
+        opacity: 0;
+    }
+}

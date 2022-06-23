@@ -1,0 +1,29 @@
+.cover {
+    background-image: url(../img/chaton.jpeg);
+    background-position: 0 -70px;
+    width: 600px;
+    height: 200px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cover h2 {
+    margin: 0;
+    position: absolute;
+    /* bottom: 12px;
+    right: 20px; */
+    color: #fff;
+    z-index: 1;
+    text-shadow: 4px 0px 2px #000;
+}
+
+.filter {
+    background-color: #000;
+    opacity: 0.5;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    bottom: 0;
+}

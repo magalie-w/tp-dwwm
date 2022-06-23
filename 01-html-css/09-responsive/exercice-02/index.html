@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Exercice 02</title>
+</head>
+<body>
+    <!--
+        Les SVGs sont comme des images. On peut placer leur code (balise SVG) directement dans le HTML ou alors utiliser un fichier svg avec ce code
+        comme une image. L'avantage de les utiliser en balise est que l'on peut facilement modifier leur couleur ou taille via le CSS comme un élément HTML.
+
+        Le sujet du responsive est ici : https://courses.boxydev.com/html-css/le-responsive.html#tp-reproduire-la-maquette-suivante
+    -->
+    <div class="container flex">
+
+        <div class="block-1">
+            <h2>Maison</h2>
+
+            <h1>Maison de plage au Touquet</h1>
+            
+            <div class="flex">
+                <div class="star flex">
+                
+                    <svg style="color:blue; width:8%;" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
+                    </svg>
+
+                    <span class="not-avis">
+                        <span class="note">4.89</span>
+                        <span class="avis">(128)</span>
+                    </span>
+                </div>
+                
+                <div class="location flex">
+                    <svg style="width:8%;" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+
+                    <span>Le Touquet-Paris-Plage</span>
+                </div>
+                
+            </div>
+
+            <br>
+
+            <div class="bouton">
+                <a href="">Vérifier disponibilité</a>
+            </div>
+
+            <p class="paragraphe">
+                Cette chambre ensoleillé et spacieuse est destinée à ceux qui voyagent léger et recherchent un endroit confortable et douillet pour se reposer pendant une nuit ou deux. Cette maison de plage se trouve dans un quartier animé parsemé de cafés, pubs, restaurants et supermarchés et se trouve à proximité de toutes les principales attractions telles que la plage.
+            </p>
+        </div>
+
+        <div class="photo block-2">
+            <div class="beach">
+                <img src="img/beach-house.jpg" alt=""/>
+            </div>
+
+            <div class="beach-1 flex">
+                <img class="img-1 flex" src="img/beach-house-interior-1.jpg" alt=""/>
+                <img class=" img-2 flex" src="img/beach-house-interior-2.jpg" alt=""/>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

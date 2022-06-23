@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exos-01</title>
+</head>
+
+<body>
+
+    <h1>ON/OFF</h1>
+    <button id="button1">ON</button>
+
+    <br>
+
+    <h1>Menu déroulant</h1>
+    <div class="container"> 
+        <ul> Menu
+            <li>A</li>
+            <li>B</li>
+            <li>C</li>
+        </ul>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script>
+
+    //Faire un bouton avec une version "On" et "Off". La version "On" est noire avec un fond gris clair comportant une ombre portée, et la version "Off" est grise avec un fond gris foncé sans ombre portée. Au clic, on passe à "On" si c'est "Off" et inversement.
+
+        var bouton = false;
+
+        $("#button1").click((function () {
+            if (bouton == true) {
+                bouton = !bouton;
+                $("#button1").text("OFF");
+
+                $("#button1").css({
+                    color : "grey",
+                    backgroundColor : "	#505050",
+                    boxShadow : "0 0 0 0",
+                })
+
+            } else if (bouton == false) {
+                bouton = !bouton;
+                $("#button1").text("ON");
+
+                $("#button1").css({
+                    color : "black",
+                    backgroundColor : "	#D0D0D0",
+                    boxShadow: "10px 5px 5px red",
+                });
+            }
+        }));
+
+        //Faire un menu déroulant : au clic sur un bouton, un bloc de texte se déplie. Et quand on reclique dessus, il se referme. Pour l'animer, il faut utiliser la fonction animate() ou slideToggle().
+
+        $(".container").click(function () {
+            $(".container > ul > li").slideToggle( {
+                display: "none",
+            });
+        }) ;
+
+    </script>
+    
+</body>
+</html>

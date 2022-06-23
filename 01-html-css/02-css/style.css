@@ -1,0 +1,61 @@
+/*Color classique*/
+body{
+    background-color: lightgray;
+}
+
+/*Pour cibler l'id*/
+/*Color hexadécimal*/
+#vert{
+    color: #ffaaf5;
+}
+
+/*Pour cibler la class*/
+/*Color RGB - RGBA*/
+.rouge{
+    color: rgba(200, 55, 0, 1);
+}
+
+/*Texte en majuscules*/
+.majuscule{
+    text-transform: uppercase;
+}
+
+/*Exos pratique*/
+.orange{
+    background-color: orange;
+}
+
+.maj{
+    text-transform: uppercase;
+}
+
+.bleu_gras{
+    color:blue;
+    font-weight: bold;
+}
+
+span:last-child{
+    color:red;
+}
+
+/*OU span:last-of-type
+span:nth-child*/
+
+.green{
+    color: green;
+}
+
+/*Tous éléménts avec la class green ET other*/
+.green.other{
+    font-weight: bold;
+}
+
+/*Tous les h2 avec green ET other*/
+h2.green.other{
+    font-size:30px;
+}
+
+/*Tous les éléments avec la clas green OU other*/
+.green, .other{
+    font-style: italic;
+}

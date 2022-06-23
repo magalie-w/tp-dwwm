@@ -1,0 +1,7 @@
+{
+  "name": "05-ionapp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

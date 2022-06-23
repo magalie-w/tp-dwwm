@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exos-02</title>
+
+    <style>
+        table, thead th, td{
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding:10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- 
+        Créer le tableau HTML suivant avec une ligne d'en tête puis autant de lignes qu'il n'y a d'éléments :
+        tableau: [
+        { nom: 'Jean', note: 8, groupe: 'B' },
+        { nom: 'Louis', note: 9, groupe: 'A' },
+        { nom: 'François', note: 14, groupe: 'B' },
+        { nom: 'Martin', note: 12, groupe: 'A' },
+        ]; 
+        Dupliquez maintenant le tableau puis afficher les étudiants du Groupe A dans le premier tableau et ceux du groupe B dans le second tableau
+
+        Créer une propriété title contenant le texte "Cliquez moi !"
+        Créer un bouton contenant la valeur de la propriété title
+        Changer le contenu du bouton par "Cliqué"
+
+        Créer un champ de saisie de texte. Demandez à l'utilisateur de saisir un texte sans espace. S'il appuye sur la touche espace, vous lui afficherez un message lui précisant qu'il ne doit pas appuyer sur la touche espace. Le message peut disparaitre au bout de 5 secondes (setTimeout ?)
+    -->
+
+    <div id="app">
+
+        <!-- Tableau groupe A -->
+        <h1>Groupe A</h1>
+        <table>
+            <thead>
+                <tr>   
+                    <td>ID</td>
+                    <td>Nom</td>
+                    <td>Note</td>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr v-for="(personne, index) of personnes" v-show="personne.groupe == 'A'">
+                    <td>
+                        {{ index }}
+                    </td>
+
+                    <td>
+                        {{ personne.nom }}
+                    </td>
+
+                    <td>
+                        {{ personne.note }}
+                    </td>
+
+                    <td>
+                        {{ personne.groupe }}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Tableau groupe B -->
+        <h1>Groupe B</h1>
+        <table>
+            <thead>
+                <tr>   
+                    <td>ID</td>
+                    <td>Nom</td>
+                    <td>Note</td>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr v-for="(personne, index) of personnes" v-show="personne.groupe == 'B'">
+                    <td>
+                        {{ index }}
+                    </td>
+
+                    <td>
+                        {{ personne.nom }}
+                    </td>
+
+                    <td>
+                        {{ personne.note }}
+                    </td>
+
+                    <td>
+                        {{ personne.groupe }}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script src="https://unpkg.com/vue@3"></script>
+
+    <script>
+
+    var app = Vue.createApp({
+        data() {
+            return {
+                personnes: [
+                    { nom: 'Jean', note: 8, groupe: 'B' },
+                    { nom: 'Louis', note: 9, groupe: 'A' },
+                    { nom: 'François', note: 14, groupe: 'B' },
+                    { nom: 'Martin', note: 12, groupe: 'A' },
+                ]
+            }
+        }
+    }).mount("#app");
+    </script>
+    
+</body>
+</html>

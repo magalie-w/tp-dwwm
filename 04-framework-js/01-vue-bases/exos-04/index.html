@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exos-04</title>
+
+    <style>
+        .bg-red{
+            background-color: red;
+        }
+
+        .bg-blue{
+            background-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 
+        La couleur du paragraphe peut être changée via les boutons radios.
+        La case à cocher contrôle l'affichage du paragraphe ou non.
+        Ajouter un select permettant de modifier la police du paragraphe (serif, sans-serif, monospace, cursive, fantasy).
+     -->
+    <div id="app">
+
+        <!-- Boutons radio -->
+        <ul>
+            <li>Boutons radio
+                <input type="radio" name="color" v-model="color" value="red">
+                <label for="rouge">Rouge</label>
+
+                <input type="radio" name="color" v-model="color" value="blue">
+                <label for="bleu">Bleu</label>
+            </li>
+        </ul>
+        
+        <!-- Case à cocher -->
+        <input type="checkbox" v-model="paragraphe">
+        <label>Afficher le paragraphe</label>
+
+        <p :class="{ 'bg-red': color == 'red', 'bg-blue' : color == 'blue'}" v-show='paragraphe' :style="{ 'font-family': police }">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veniam quo enim aperiam, sit dolor voluptatum consequatur quisquam eligendi exercitationem culpa porro dolorum consequuntur illum temporibus molestias dolore tenetur itaque ut.
+        </p>
+
+        <br>
+
+        <select v-model="police">
+            <option value="serif">Serif</option>
+            <option value="sans-serif">Sans-serif</option>
+            <option value="monospace">Monospace</option>
+            <option value="cursive">Cursive</option>
+            <option value="fantasy">Fantasy</option>
+        </select>
+    </div>
+
+    <script src="https://unpkg.com/vue@3"></script>
+
+    <script>
+        Vue.createApp({
+            data() {
+                return {
+                    color: "",
+                    paragraphe: false,
+                    police: "",
+                }
+            }
+
+        }).mount("#app");
+    </script>
+</body>
+</html>

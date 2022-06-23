@@ -1,0 +1,7 @@
+HTML 5
+
+- https://caniuse.com/
+- https://www.w3schools.com
+- https://validator.w3.org/
+- https://websitesetup.org/html5-periodical-table/
+- https://www.leptidigital.fr/productivite/caracteres-speciaux-html-2-19297/

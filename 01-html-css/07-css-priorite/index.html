@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Priorité en CSS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- 
+        Liste des priorités en CSS (+ important au - important)
+        - !important 10 000
+        - attribut style html 2 000
+        - sélecteur par id (#) 1 000
+        - sélecteur par class (.), par attribut ([]) 100
+        - sélecteur par balise 10
+        - sélecteur universel (*) 1
+    -->
+
+    <section id="container" class="container" style="background-color: pink;">
+        <p>Un paragraphe</p>
+        <p title="salut">Paragraphe 2</p>
+
+        <p class="container">
+            <span class="container"></span>
+        </p>
+    </section>
+
+    <div id="content">
+        <p>A</p>
+        <p>B</p>
+        <p>C</p>
+        <span>Toto</span>
+        <p>D</p>
+        <p>E</p>
+    </div>
+    
+</body>
+</html>

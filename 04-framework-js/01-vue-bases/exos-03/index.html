@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exos-03</title>
+</head>
+
+<body>
+
+    <!-- 
+        Définir une propriété letters contenant un tableau vide.
+        Créer une méthode add() permettant d'ajouter au tableau (voir push) une lettre qui a été saisie dans un input. N'oubliez pas de lier la méthode au clic sur un bouton.
+        Afficher le contenu du tableau letters en utilisant le v-for
+     -->
+    <div id="app">
+        <input type="text" v-model="message">
+
+        <div v-for="(letter, index) of letters">
+            {{ letter }}
+            <span v-if="index <= letters.length - 2">, </span>
+        </div>
+
+        <button @click="add(message)">Valider</button>
+
+    </div>
+
+    <script src="https://unpkg.com/vue@3"></script>
+
+    <script>
+        var app = Vue.createApp({
+            data() {
+                return {
+                    letters: [],
+                    message: "",
+                }
+            },
+
+            methods: {
+                add(letter){
+                    this.letters.push(letter);  
+                }
+
+            }
+        }).mount("#app");
+    </script>
+</body>
+</html>

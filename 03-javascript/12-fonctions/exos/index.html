@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exos</title>
+</head>
+
+<body>
+
+    <!-- 1 -->
+    <h1>Calcule carré</h1>
+    <input type="number" name="calculCarre" id="calculCarre">
+    <button type="button" id="button">Calculer</button>
+
+    <br><br>
+
+    <!-- 2 -->
+    <h1>Convertir monnaie</h1>
+    <input type="number" name="monnaie" id="monnaie">
+    <button type="button" id="convertir">Convertir</button>
+
+    <br><br>
+
+    <!-- 4 -->
+    <input type="number" name="pair" id="pair">
+    <button type="button" id="pair">Pair</button>
+
+    <script>
+
+        //1. Créer une fonction qui calcule le carré d'un nombre
+        var calculCarre = document.getElementById("calculCarre");
+        var button = document.getElementById("button");
+
+        function carre(number) { 
+            var resultat = number * number;
+            return resultat;
+        }
+
+        button.addEventListener("click", function (event) {
+            carre(calculCarre.value);
+            console.log(carre(calculCarre.value));
+        });
+
+        //2. Créer une fonction qui convertit une valeur en euros en bitcoins, et qui peut faire l'inverse.
+
+        var euros = 1;
+        var bitcoins = 0.000035;
+
+        var monnaie = document.getElementById("monnaie");
+
+        function convertion(euro) {
+            var resultatConvertion = euros * bitcoins;
+            return resultatConvertion;
+        }
+
+        var buttonConvertion = document.getElementById("convertir");
+
+        convertir.addEventListener("click", function (event) {
+            convertion(monnaie.value);
+            console.log(convertion(monnaie.value));
+        });
+
+
+        // 3. Créer une fonction qui calcule le PGCD de 2 nombres
+        // 4. Créer une fonction qui permet de savoir si un nombre est pair
+        // 5. Créer une fonction qui permet de savoir si un nombre est premier
+    
+        // 6. Créer une fonction qui permet de calculer la suite de fibonacci
+        // 7. Créer une fonction permettant de savoir si un mot est un palindrome
+
+    </script>
+</body>
+</html>

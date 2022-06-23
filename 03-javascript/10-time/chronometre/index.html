@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chronomètre</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Nous allons créer un chronomètre. On aura un bouton pour démarrer, arrêter ou remettre à zéro le chronomètre.
+
+    Le bouton démarrer lancera le chrono, il faudra incrémenter de 1 une variable sec. On devra répéter cela toutes les secondes. Bien sûr, arrivé à 60, on devra remettre sec à 0 et incrémenter min. On fera la même chose pour les heures.
+
+    Le bouton arrêter devra stopper le chronomètre mais le temps écoulé restera. Il faudra trouver un moyen d'arrêter la répétition chaque seconde. 
+    Le bouton reset remettra à zéro toutes les variables et arrêtera l'incrémentation des variables.
+
+    On ajoutera des raccourcis clavier. La touche espace permettra de lancer ou de stopper le chronomètre en fonction de son état actuel. La touche R permettra de remettre à zéro le chronomètre
+
+    On ajoutera un mode précision sur le chronomètre qui permettra d'avoir les millisecondes.-->
+
+    <div id="chrono"></div>
+
+    <div class="bouton">
+        <button onclick="start()">Start</button>
+        <button onclick="stop()">Stop</button>
+        <button onclick="reset()">Reset</button>
+    </div>
+    <script>
+
+        var chono = document.getElementById("chrono");
+        var heure = 0; 
+        var minute = 0;
+        var second = 0;
+        var millisecond = 0;
+        var a = 0;
+
+        // innerHTML à la place de textContent pour transformer le texte en html
+        chrono.innerHTML = "<div>" + heure + "</div> : " + "<div>" + minute + "</div> : " + "<div>" + second + "</div> : <div>" + millisecond + "</div>";
+        
+        //START
+        function start() {
+            a = setInterval(function () {
+                if (millisecond >= 100){
+                    millisecond = 0;
+                    second++;
+                
+                    if (second >= 60){
+                        second = 0;
+                        minute++;
+
+                        if(minute >= 24){
+                            minute = 0;
+                            heure++;
+                        }
+                        
+                        //Afficher le 0 si il y a qu'un chiffre
+                        // if (minute >= 60) {
+                        //     chrono.minute.textContent = "0" + minute;
+                        // }
+                        
+                        //Afficher le 0 si il y a qu'un chiffre
+                        // if (second >= 9) {
+                        //     chrono.second.textContent = "0" + second;
+                        // }
+
+                        chrono.textContent = heure + " : " + minute + " : " + second + " : " + millisecond;
+
+                    } else {
+                        //Afficher le 0 si il y a qu'un chiffre
+                        // if (minute >= 60) {
+                        //     chrono.minute.textContent = "0" + minute;
+                        // }
+                        
+                        //Afficher le 0 si il y a qu'un chiffre
+                        // if (second >= 9) {
+                        //     chrono.second.textContent = "0" + second;
+                        // }
+                        
+                        chrono.textContent = heure + " : " + minute + " : " + second + " : " + millisecond;
+                    }
+
+                } else {
+                    millisecond++;
+
+                    //Afficher le 0 si il y a qu'un chiffre
+                    // if (minute >= 60) {
+                    //     chrono.minute.textContent = "0" + minute;
+                    // }
+                        
+                    //Afficher le 0 si il y a qu'un chiffre
+                    // if (second >= 9) {
+                    //     chrono.second.textContent = "0" + second;
+                    // }
+
+                    chrono.textContent = heure + " : " + minute + " : " + second + " : " + millisecond;
+                }
+            }, 9);    
+        }
+
+        //STOP
+        function stop() {
+            clearInterval(a);
+        };
+
+        //RESET
+        function reset() {
+            heure = 0; 
+            minute = 0;
+            second = 0;
+            millisecond = 0;
+
+            //Afficher le 0 si il y a qu'un chiffre
+            // if (minute >= 60) {
+            //     chrono.minute.textContent = "0" + minute;
+            // }
+                        
+            //Afficher le 0 si il y a qu'un chiffre
+            // if (second >= 9) {
+            //     chrono.second.textContent = "0" + second;
+            // }
+
+            chrono.textContent = heure + " : " + minute + " : " + second + " : " + millisecond;
+        }
+
+    </script>
+</body>
+</html>

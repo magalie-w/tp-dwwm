@@ -1,0 +1,244 @@
+body{
+    margin:auto;
+    margin-top:15px;
+    /* padding:5% 5%; */
+    width: 1220px;
+    /* width: 100%; */
+}
+
+.container{
+    /* width: 1140px; */
+    margin: auto;
+    justify-content: space-evenly;
+}
+
+.flex{
+    display: flex;
+    /* align-items: center; */
+    width: 100%;
+}
+
+h2{
+    color:grey;
+    margin-bottom:0;
+}
+
+h1{
+    margin-top:0;
+}
+
+.block-1, .block-2{
+    width: 40%;
+}
+
+.note{
+    font-weight: bold;
+    color:blue;
+}
+
+.avis{
+    color:lightgray;
+}
+
+.location{
+    font-weight: 600;
+}
+
+.star .not-avis, .location span{
+    width: 200px;
+    align-self: center;
+}
+
+.bouton{
+    border:1px solid blue;
+    background-color: blue;
+    border-radius:7px;
+    text-align: center;
+    padding:2%;
+    width: 30%;
+}
+
+.bouton a{
+    text-decoration: none;
+    color:white;
+}
+
+.paragraphe{
+    font-weight: 600;
+}
+
+.beach img{
+    width: 100%;
+    border-radius: 3%;
+    object-fit: cover;
+}
+
+.img-1, .img-2{
+    width: 48%;
+    height: 260px;
+    border-radius:3%;
+    object-fit: cover;
+    justify-content: space-between;
+    margin:5px;
+}
+
+/* PC Portable */
+@media (min-width:768px) and (max-width:1023px){
+    .container{
+        width: 900px;
+        flex-direction: column-reverse;
+        position: relative;
+    }
+
+    body{
+        width: 900px;
+        /* margin: 0; */
+    }
+
+    h1{
+        width: 500px;
+    }
+
+    .bouton{
+        position: absolute;
+        right: 13px;
+        bottom: 135px;
+        padding: 10px;
+        width: 150px;
+    }
+
+    .block-2{
+        width: 100%;
+        display: flex;
+    }
+
+    .img-1, .img-2{
+        height: 220px;
+        margin: 0;
+    }
+
+    .beach img{
+        width: 100%;
+    }
+
+    .beach-1 img{
+        width: 45%;
+    }
+
+    .beach-1{
+        justify-content: space-evenly;
+    }
+
+    .paragraphe{
+        width: 890px;
+    }
+}
+
+/* Tablette */
+@media (min-width:640px) and (max-width:767px){
+    .container{
+        width: 700px;
+        flex-direction: column-reverse;
+        position: relative;
+    }
+
+    body{
+        width: 700px;
+        /* margin: 0; */
+    }
+
+    h1{
+        width: 500px;
+    }
+
+    .bouton{
+        position: absolute;
+        right: 13px;
+        bottom: 145px;
+        padding: 10px;
+        width: 150px;
+    }
+
+    .block-2{
+        width: 100%;
+        display: flex;
+    }
+
+    .img-1{
+        height: 190px;
+        margin: 0;
+    }
+
+    .img-2{
+        display: none;
+    }
+
+    .beach, .beach-1{
+        width: 50%;
+    }
+
+    .beach img{
+        width: 330px;
+        height: 190px;
+    }
+
+    .beach-1 img{
+        width: 330px;
+    }
+
+    .beach-1{
+        justify-content: space-evenly;
+    }
+
+    .paragraphe{
+        width: 690px;
+    }
+}
+
+/* Téléphone */
+@media (min-width:0) and (max-width:639px){
+    .container{
+        width: 600px;
+        flex-direction: column-reverse;
+        position: relative;
+    }
+
+    body{
+        width: 600px;
+        /* margin: 0; */
+    }
+
+    h1{
+        width: 500px;
+    }
+
+    .block-1{
+        position: relative;
+        top:170px;
+    }
+
+    .block-2{
+        width: 100%;
+    }
+
+    .bouton{
+        position: absolute;
+        right: 70px;
+        bottom: 90px;
+        padding: 10px;
+        width: 150px;
+    }
+
+    .paragraphe{
+        padding:5px;
+        width: 600px;
+    }
+
+    .beach-1{
+        display: none;
+    }
+
+    .position{
+        position: relative;
+    }
+}

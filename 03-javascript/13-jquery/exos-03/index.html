@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exos-03</title>
+
+    <style>
+        .square1, .square2, .square3{
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+        }
+
+        .red{
+            background-color: red;
+        }
+
+        .blue{
+            background-color: blue;
+        }
+
+        .green{
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="square1"></div>
+    <div class="square2"></div>
+    <div class="square3"></div>
+    
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script>
+        //Renseignez-vous sur .addClass(), .removeClass() et .toggleClass()
+        //Créer 3 carrés transparent avec bordure
+        //Au clic sur le premier carré, changer le background du carré en rouge (avec une classe)
+        //Au clic sur le second carré, changer son background en bleu (avec une classe)
+        //Au clic sur le troisième carré, changer son background en vert et effacer le background des autres carrés (classe)
+        //Un clic sur chaque bouton doit intervertir les choses
+        //Ajouter un bouton "Random" qui ajoute aléatoirement sur les divs une des 3 classes précédentes
+
+
+        // Carré 1
+        $(".square1").click(function () {
+            $(".square1").toggleClass("red");
+            $(".square2").removeClass("blue");
+            $(".square3").removeClass("green");
+        });
+
+        // Carré 2
+        $(".square2").click(function () {
+            $(".square2").toggleClass("blue");
+            $(".square1").removeClass("red");
+            $(".square3").removeClass("green");
+        });
+
+        // Carré 3
+        $(".square3").click(function () {
+            $(".square3").toggleClass("green");
+            $(".square1").removeClass("red");
+            $(".square2").removeClass("blue");
+        });
+
+    </script>
+</body>
+</html>

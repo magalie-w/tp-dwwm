@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+
+<form action="#" name="f" method="get">
+	<div>
+		<input
+				type="text"
+				name=""
+				placeholder="Nom et prénom. ex : DUPOND jean"
+				pattern="^[a-zA-Z-\u00C0-\u017F]{2,30}\s[a-zA-Z-\u00C0-\u017F]{2,30}$"
+				title="Ex : Dupond Jean / Toto tata"
+				value="Samuel Michaux"
+				required
+		>
+		<input type="number"
+		       name=""
+		       min="-5"
+		       max="10"
+		       placeholder="Un nombre aléatoire"
+		>
+		<input type="password" name="" disabled>
+		<input type="email" name="">
+		<input type="checkbox" name="" checked>
+		<input type="range" name="">
+		<input type="radio" name="" checked>
+		<input type="date" name="">
+		<input type="time" name="">
+		<input type="datetime-local" name="">
+		<input type="tel" name="">
+		<input type="image" name="">
+		<input type="color" name="">
+		<input type="hidden" name="" value="HJGFJFUYDFGU6788768GDZUG">
+		<input type="url" name="">
+
+	</div>
+
+	<div>
+		<textarea name="" cols="50" rows="20"
+		          maxlength="10"
+		></textarea>
+	</div>
+
+	<div>
+		<select name="list" id="" multiple size="2">
+			<option value="fr">🇫🇷 France</option>
+			<option value="be">Belgique</option>
+			<option value="ch">Suisse</option>
+			<option value="qu">Quebec</option>
+			<option value="qu">&#8596;</option>
+		</select>
+	</div>
+
+	<div>
+		<input type="search" name="" list="fruits">
+		<datalist id="fruits">
+			<option>Pomme</option>
+			<option>Bannane</option>
+			<option>Poire</option>
+			<option>Fraise</option>
+			<option>Framboise</option>
+		</datalist>
+	</div>
+
+	<div>
+		<input type="submit" name="">
+		<input type="reset" name="">
+	</div>
+
+</form>
+
+<script>
+
+</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+body{
+    margin:0;
+}
+
+.container{
+    width: 1000px;
+    margin:auto;
+}
+
+.flex{
+    display: flex;
+}
+
+header{
+    background-color: yellow;
+    padding:20px 10px;
+}
+
+.logo{
+    width: 700px;
+}
+
+.blue{
+    background-color: blue;
+    padding:20px;
+    width: 700px;
+    flex-wrap:wrap;
+    justify-content: space-around;
+}
+
+nav{
+    width: 300px;
+}
+
+article{
+    background-color: pink;
+    height: 200px;
+    width: 200px;
+    margin-bottom:20px;
+}
+
+aside{
+    background-color: red;
+    width: 300px;
+    padding:20px 10px;
+}

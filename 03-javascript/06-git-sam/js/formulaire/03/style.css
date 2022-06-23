@@ -1,0 +1,14 @@
+div{
+    margin:10px;
+    padding:10px;
+}
+
+div label{
+    display: inline-block;
+    width: 150px;
+}
+
+div input{
+    /* Supprimer la bordure bleu autour de la case */
+    outline: none;
+}

@@ -1,0 +1,109 @@
+body{
+    width: 1050px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.container{
+    position: relative;
+    border: 1px solid lightgray;
+    width: 400px;
+    height: 400px;
+}
+
+.case1, .case2, .case3, .case4, .case5, .case6, .case7, .case8, .case9, .case10, .case11, .case12, .case13, .case14, .case15, .case16{
+    border: 1px solid lightgray;
+    width: 100px;
+    height: 100px;
+    background-color: cadetblue;
+    color: white;
+    text-align: center;
+    line-height: 100px;
+    font-size: 25px;
+}
+
+.general{
+    box-sizing: border-box;
+    position: absolute;
+}
+
+.case1{
+    top: 0;
+    left: 0;
+}
+
+.case2{
+    top:0;
+    left:100px;
+}
+
+.case3{
+    top:0;
+    left:200px;
+}
+
+.case4{
+    top:0;
+    left:300px;
+}
+
+.case5{
+    top:100px;
+    left:0;
+}
+
+.case6{
+    top:100px;
+    left:100px;
+}
+
+.case7{
+    top:100px;
+    left:200px;
+}
+
+.case8{
+    top:100px;
+    left:300px;
+}
+
+.case9{
+    top:200px;
+    left:0;
+}
+
+.case10{
+    top:200px;
+    left:100px;
+}
+
+.case11{
+    top:200px;
+    left:200px;
+}
+
+.case12{
+    top:200px;
+    left:300px;
+}
+
+.case13{
+    top:300px;
+    left:0;
+}
+
+.case14{
+    top:300px;
+    left:100px;
+}
+
+.case15{
+    top:300px;
+    left:200px;
+}
+
+.case16{
+    top:300px;
+    left:300px;
+}

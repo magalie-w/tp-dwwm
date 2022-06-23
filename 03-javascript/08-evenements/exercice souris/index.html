@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercice souris</title>
+</head>
+
+    <style>
+        #carre {
+            width: 100px;
+            height: 100px;
+            margin-top: 50px;
+            margin-left: 30px;
+            background-color: blue;
+            border-radius: 15px;
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+        <!--Exercice Souris
+    L'événement mousemove permet d'écouter le déplacement de la souris.
+    On va récupérer la position sur X et Y avec event.pageX et event.pageY.
+    On va ensuite créer une div (carré ou cercle) en position absolute
+    On va ensuite configurer le top et le left de la div en fonction de la position de la souris et la div devrait suivre simplement la div.
+    BONUS: Si on clique sur la page, le cercle se déplace. Si on double clique, le cercle arrête de se déplacer. On utilisera une variable en booléen pour cela et on vérifiera s'il est vrai ou non.
+    BONUS: Faites en sorte que la souris soit centré sur la div lors du déplacement -->
+
+    <div id="carre"></div>
+
+    <script>
+        // Evénements souris et fenêtre
+        // Pour suivre sur la souris sur tout le document, on peut utiliser
+        // window ou document ou document.getElementByid("carre");
+
+        var carre = document.getElementById("carre");
+        var canMove = false;
+
+        carre.addEventListener("click", function() {
+            canMove = !canMove; //Mettre la valeur inverse
+        });
+
+        window.addEventListener('mousemove', function (event) {
+            //pageX = horizontal, pageY = vertical
+            console.log(event.pageX, event.pageY);
+
+             if (canMove) { //On bouge la div si canMove est true
+                carre.style.top = event.pageY - 100 + "px";
+                carre.style.left = event.pageX - 75 + "px";
+            }
+        });
+    </script>
+</body>
+</html>

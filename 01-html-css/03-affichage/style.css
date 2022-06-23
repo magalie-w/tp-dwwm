@@ -1,0 +1,101 @@
+body{
+    margin:0;
+    background-color: #c8c8c8;
+}
+
+.container{
+    width: 1000px;
+    margin:auto; /*Pour center des éléments*/
+}
+
+header{
+    background-image: linear-gradient(180deg, #fff 0%, #ff8100 100%); /*dégradé*/
+    margin: 0 0 15px 0; /*Haut, Droite, Bas, Gauche*/
+    padding: 40px 0; /*Haut-Bas, Droite-Gauche*/
+    text-align: center; /*Pour centrer du texte*/
+    border: 3px solid black;
+}
+
+nav{
+    background-image: linear-gradient(90deg, #fff 0%, #00ffff 100%);
+    border: 3px solid black;
+    margin-bottom:15px;
+    padding: 10px;
+}
+
+nav li{
+    display: inline;
+}
+
+nav ul{
+    padding:0;
+    margin:0;
+    text-align: center;
+}
+
+/*Float : permet de disposer les éléments côte à côte*/
+nav span{
+    float:left;
+}
+
+section{
+    border:3px solid black;
+    width:659px; /*700px-3px-3px(des bordures) - 15px(margin) - 10px(padding) -10px*/
+    float: left;
+    margin-right: 15px;
+    padding: 10px;
+}
+
+section h2{
+    margin:0;
+    font-size:16px;
+    font-weight: normal;
+}
+
+.clear{
+    clear:left;
+}
+
+section article{
+    background-color: #8db1e3;
+    border:3px solid black;
+    height: 150px;
+}
+
+section aside, #main-aside{
+    border:3px solid black;
+    background-color: #d6a39c;
+    height: 150px;
+}
+
+#main-aside{
+    width:294px; /*300px-3px-3px (des bordures)*/
+    float: left;
+    height: 365px;
+}
+
+#article-1{
+    margin-bottom: 15px;
+}
+
+/*Flexbox : plus moderne et plus simple que les float*/
+.flex{
+    display:flex;
+}
+
+.flex article{
+    width: 700px;
+    margin-right: 15px;
+}
+
+.flex aside{
+    width: 150px;
+}
+
+footer{
+    background-color: #d3d4ac;
+    margin-top: 15px;
+    border: 3px solid black;
+    text-align: center;
+    padding: 15px 0;
+}
