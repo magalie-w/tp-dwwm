@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Le CSS</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        p{
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!--
+        3 façons d'écrire du CSS
+        - balise style dans les balises
+        - balise <style></style> dans le head
+        - un fichier externe .css
+    -->
+
+    <h1 style="color:blue;">Mon titre est en bleu</h1>
+
+    <!--id est unique-->
+    <p id="vert">Ce paragraphe est centré et vert</p>
+    <p class="rouge majuscule">Ce paragraphe est rouge</p>
+    
+    <!--Exos pratique
+        La couleur du paragraphe devra être en orange (fond)
+        Le premier span devra être en majuscule
+        Le second span sera en gras et un bleu (texte)
+        Le dernier span devra être en rouge (texte)
+    -->
+    <p class="orange">
+        On va mettre un texte avec ce <span class="maj">mot</span> en majuscule.
+        Il faudra une <span class="bleu_gras">mot</span> un gras et en bleu.
+        Il y aura aussi un <span>span</span> en rouge.
+    </p>
+
+    <h2 class="green other">Un titre</h2>
+
+    <p class="green other">Un paragraphe</p>
+
+    <p class="green">Un autre paragraphe</p>
+
+    <p class="other">Encore un paragraphe</p>
+
+</body>
+</html>

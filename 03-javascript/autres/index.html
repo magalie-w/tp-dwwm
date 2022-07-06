@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autre</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div id="rectangleBleu"></div>
+    <div id="rectangleRouge"></div>
+    <div id="carreJaune"></div>
+    <div id="rectangleViolet"></div>
+    <div id="rectangleOrange"></div>
+
+    <div id="triangleVert"></div>
+
+    <div id="cercleRose"></div>
+    
+
+    <script>
+
+ 
+        //rectangleBleu
+        var rectangleBleu = document.getElementById("rectangleBleu");
+        var rectangleRouge = document.getElementById("rectangleRouge");
+        var carreJaune = document.getElementById("carreJaune");
+        var rectangleViolet = document.getElementById("rectangleViolet");
+        var rectangleOrange = document.getElementById("rectangleOrange");
+        var triangleVert = document.getElementById("triangleVert");
+        var cercleRose = document.getElementById("cercleRose");
+        var canMove = false;
+
+        rectangleBleu.addEventListener("click", function () {
+            canMove = !canMove;
+        });
+
+        //faire un event click sur la forme
+        //Creer variable forme qui va récupérer la forme
+        window.addEventListener("mousemove", function (event) {
+            console.log(event.pageX, event.pageY);
+
+            if (canMove) {
+                rectangleBleu.style.top = event.pageY - 40 + "px";
+                rectangleBleu.style.left = event.pageX - 110 + "px";
+                rectangleBleu.style.zIndex = "1";
+                rectangleRouge.style.zIndex = "0";
+                carreJaune.style.zIndex = "0";
+                rectangleViolet.style.zIndex = "0";
+                rectangleOrange.style.zIndex = "0";
+                triangleVert.style.zIndex = "0";
+                cercleRose.style.zIndex = "0";
+            }
+        });
+
+        //rectangleRouge
+        rectangleRouge.addEventListener("click", function () {
+            canMove = !canMove;
+        });
+
+        rectangleRouge.addEventListener("mousemove", function (event) {
+            console.log(event.pageX, event.pageY);
+
+            if (canMove) {
+                rectangleRouge.style.top = event.pageY - 40 + "px";
+                rectangleRouge.style.left = event.pageX - 110 + "px";
+                rectangleRouge.style.zIndex = "1";
+                rectangleBleu.style.zIndex = "0";
+                carreJaune.style.zIndex = "0";
+                rectangleViolet.style.zIndex = "0";
+                rectangleOrange.style.zIndex = "0";
+                triangleVert.style.zIndex = "0";
+                cercleRose.style.zIndex = "0";
+            }
+        });
+
+         //carreJaune
+        carreJaune.addEventListener("click", function () {
+            canMove = !canMove;
+        });
+
+        carreJaune.addEventListener("mousemove", function (event) {
+            console.log(event.pageX, event.pageY);
+
+            if (canMove) {
+                carreJaune.style.top = event.pageY - 125 + "px";
+                carreJaune.style.left = event.pageX - 125 + "px";
+                carreJaune.style.zIndex = "1";
+                rectangleBleu.style.zIndex = "0";
+                rectangleRouge.style.zIndex = "0";
+                rectangleViolet.style.zIndex = "0";
+                rectangleOrange.style.zIndex = "0";
+                triangleVert.style.zIndex = "0";
+                cercleRose.style.zIndex = "0";
+            }
+        });
+
+        //rectangleViolet
+        rectangleViolet.addEventListener("click", function () {
+            canMove = !canMove;
+        });
+
+        rectangleViolet.addEventListener("mousemove", function (event) {
+            console.log(event.pageX, event.pageY);
+
+            if (canMove) {
+                rectangleViolet.style.top = event.pageY - 100 + "px";
+                rectangleViolet.style.left = event.pageX - 40 + "px";
+                rectangleViolet.style.zIndex = "1";
+                rectangleBleu.style.zIndex = "0";
+                rectangleRouge.style.zIndex = "0";
+                carreJaune.style.zIndex = "0";
+                rectangleOrange.style.zIndex = "0";
+                triangleVert.style.zIndex = "0";
+                cercleRose.style.zIndex = "0";
+            }
+        });
+
+        //rectangleOrange
+        rectangleOrange.addEventListener("click", function () {
+            canMove = !canMove;
+        });
+
+        rectangleOrange.addEventListener("mousemove", function (event) {
+            console.log(event.pageX, event.pageY);
+
+            if (canMove) {
+                rectangleOrange.style.top = event.pageY - 100 + "px";
+                rectangleOrange.style.left = event.pageX - 40 + "px";
+                rectangleOrange.style.zIndex = "1";
+                rectangleBleu.style.zIndex = "0";
+                rectangleRouge.style.zIndex = "0";
+                carreJaune.style.zIndex = "0";
+                rectangleViolet.style.zIndex = "0";
+                triangleVert.style.zIndex = "0";
+                cercleRose.style.zIndex = "0";
+            }
+        });
+
+        //triangleVert
+        triangleVert.addEventListener("click", function () {
+            canMove = !canMove;
+        });
+
+        triangleVert.addEventListener("mousemove", function (event) {
+            console.log(event.pageX, event.pageY);
+
+            if (canMove) {
+                triangleVert.style.top = event.pageY - 120 + "px";
+                triangleVert.style.left = event.pageX - 100 + "px";
+                triangleVert.style.zIndex = "1";
+                rectangleBleu.style.zIndex = "0";
+                rectangleRouge.style.zIndex = "0";
+                carreJaune.style.zIndex = "0";
+                rectangleViolet.style.zIndex = "0";
+                rectangleOrange.style.zIndex = "0";
+                cercleRose.style.zIndex = "0";
+            }
+        });
+
+        //cercleRose
+        cercleRose.addEventListener("click", function () {
+            canMove = !canMove;
+        });
+
+        cercleRose.addEventListener("mousemove", function (event) {
+            console.log(event.pageX, event.pageY);
+
+            if (canMove) {
+                cercleRose.style.top = event.pageY - 125 + "px";
+                cercleRose.style.left = event.pageX - 125 + "px";
+                cercleRose.style.zIndex = "1";
+                rectangleBleu.style.zIndex = "0";
+                rectangleRouge.style.zIndex = "0";
+                carreJaune.style.zIndex = "0";
+                rectangleViolet.style.zIndex = "0";
+                rectangleOrange.style.zIndex = "0";
+                triangleVert.style.zIndex = "0";
+            }
+        });
+    </script>
+    
+</body>
+</html>

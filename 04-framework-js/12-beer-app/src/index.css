@@ -1,0 +1,138 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(#ffc425, #eaaa00);
+  background-repeat: no-repeat;
+  height: 100%;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.flex {
+  display: flex;
+}
+
+.around {
+  justify-content: space-around;
+}
+
+.center {
+  justify-content: center;
+  text-align: center;
+}
+
+.margin {
+  margin-top: 50px;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+
+.container {
+  margin:auto;
+  width: 1000px;
+  /* text-align: center; */
+}
+
+h1 {
+  font-family: "Bevan", "cursive";
+  transform: rotate(-10deg);
+  font-size: 75px;
+  text-align: center;
+}
+
+h2 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+}
+
+input {
+  padding: 15px 30px 15px 10px;
+  border: none;
+}
+
+button {
+  width: 150px;
+  height: 45px;
+  background-color: #e13e45;
+  color: white;
+  text-transform: uppercase;
+  border:none;
+}
+
+.contenu-cards {
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.red-card {
+  background-color: #e13e45;
+  width: 260px;
+  height: 15px;
+}
+
+.card {
+  background-color: white;
+  width: 260px;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.card img {
+  width: 100px;
+  height: 330px;
+}
+
+.contenu-block {
+  display: inline;
+  /* justify-self: center; */
+}
+
+.red-block {
+  margin-top: 50px;
+  background-color: #e13e45;
+  width: 100%;
+  height: 15px;
+}
+
+.block {
+  width: 100%;
+  height: 100%;
+  background-color: white;
+}
+
+.img {
+  width: 150px;
+  height: 500px;
+}
+
+.text-beer {
+  width: 500px;
+  text-align: left;
+}
+
+.rond {
+  margin-left: 5px;
+  width: 5px;
+  height: 5px;
+  border: 5px solid brown;
+  border-radius:100%;
+  background-color: brown;
+}
+
+.img-beer {
+  width: 50px;
+  height: 50px;
+  align-self: center;
+}

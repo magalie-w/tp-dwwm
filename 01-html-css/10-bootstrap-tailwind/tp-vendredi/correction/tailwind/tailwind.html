@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- FONTS -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <title>TP 2 - Tailwind</title>
+</head>
+
+<body class="bg-gray-200 relative">
+
+    <!-- NAVBAR start -->
+    <nav class="bg-gray-400 fixed flex font-['Open_Sans'] font-[700] h-16 justify-between xl:px-[5%] p-5 shadow text-sm text-white top-0 w-[100%] z-10">
+        <img class="absolute hidden h-24 left-1/2 sm:inline top-0 -translate-x-1/2 w-24" src="img/logo.png"
+            alt="logo">
+
+        <div class="flex">
+            <a class="hover:border-b-2 hover:scale-125 hover:border-[#f12c0e] mr-6" href="#">Accueil</a>
+            <a class="hover:border-b-2 hover:scale-125 hover:border-[#f12c0e]" href="#">Nos pizzas</a>
+        </div>
+
+        <div class="flex">
+            <a class="hover:border-b-2 hover:scale-125 hover:border-[#f12c0e]" href="#">Commander</a>
+            <a class="hover:border-b-2 hover:scale-125 hover:border-[#f12c0e] ml-6" href="#">Contact</a>
+        </div>
+
+    </nav> <!-- NAVBAR end -->
+
+    <!-- CONTAINER start -->
+    <div class="xl:w-[90%] mx-auto">
+
+        <!-- DISPLAY-MENU-XL start -->
+        <div class="relative">
+            <img class="absolute h-full hidden left-0 xl:inline top-0" src="img/bg.png" alt="bg">
+
+            <!-- DIV-MENU start -->
+            <div class="bg-white xl:left-1/4 xl:relative xl:w-1/2 mb-7 mt-24 p-5 text-center">
+                
+                <h2 class="font-['Montserrat'] font-[700] p-3 text-[#f12c0e] text-3xl uppercase">
+                    Notre menu
+                </h2>
+    
+                <p class="font-['Open_Sans'] text-sm p-3">
+                    Pizzas au feu de bois uniques ou laissez-vous tenter par nos pâtes, antipasti, focaccias, salades et
+                    plats de bruschetta. Détendez-vous dans l'ambiance conviviale en appréciant les arômes des fours à bois
+                    ou assez-vous en plein air et profitez du soleil de Mildura.
+                </p>
+            </div> <!-- DIV-MENU end -->
+        </div> <!-- DISPLAY-MENU-XL end -->
+
+        <!-- DISPLAY-CARDS-XL start -->
+        <div class="xl:flex xl:flex-wrap xl:justify-between">
+
+            <!-- OFFER1 start -->
+            <div class="bg-white xl:w-[48.5%] mb-7 relative">
+                <span class="absolute bg-[#f12c0e] right-1/2 px-2 rounded-xl xl:right-5 text-white -top-2 translate-x-1/2">
+                    -5,00 €
+                </span>
+    
+                <!-- DISPLAY-SM start -->
+                <div class="sm:flex">
+                    <img class="object-cover h-32 xl:h-56 xl:w-56 sm:h-48 sm:m-4 sm:w-48 w-full" src="img/original.jpeg" alt="original">
+    
+                    <!-- DESCRIPTION start -->
+                    <div class="p-4 sm:flex sm: flex-col sm:justify-center">
+    
+                        <h3 class="font-['Montserrat'] font-[700] mb-2 text-xl">Original</h3>
+    
+                        <p class="font-['Open_Sans'] font-[5] italic mb-2 text-sm">
+                            Sauce tomate, mozzarella et origan
+                        </p>
+    
+                        <p class="font-['Open_Sans'] mb-6">
+                            <span class="font-[700] text-[#f12c0e]">18,00 €</span> <span
+                                class="font-[700] line-through ml-1 text-[0.65em]">23,00€</span>
+                        </p>
+    
+                        <a class="bg-gray-200 border border-[#f12c0e] font-['Open_Sans'] hover:bg-red-400 hover:border-black hover:text-white hover:transition-transform px-2 py-2 rounded text-center text-sm uppercase w-44"
+                            href="#">
+                            Ajouter au panier
+                        </a>
+                    </div> <!-- DESCRIPTION end -->
+                </div> <!-- DISPLAY-SM end -->
+            </div> <!-- OFFER1 end -->
+
+            <!-- OFFER2 start -->
+            <div class="bg-white xl:w-[48.5%] mb-7 relative">
+                <span class="absolute bg-[#f12c0e] right-1/2 px-2 rounded-xl xl:right-5 text-white -top-2 translate-x-1/2">
+                    -5,00 €
+                </span>
+
+                <!-- DISPLAY-SM start -->
+                <div class="sm:flex">
+                    <img class="object-cover h-32 xl:h-56 xl:w-56 sm:h-48 sm:m-4 sm:w-48 w-full" src="img/salami.jpeg" alt="salami">
+
+                    <!-- DESCRIPTION start -->
+                    <div class="p-4 sm:flex sm: flex-col sm:justify-center">
+
+                        <h3 class="font-['Montserrat'] font-[700] mb-2 text-xl">Salami</h3>
+
+                        <p class="font-['Open_Sans'] font-[5] italic mb-2 text-sm">
+                            Sauce tomate, mozzarella et salami doux
+                        </p>
+
+                        <p class="font-['Open_Sans'] mb-6">
+                            <span class="font-[700] text-[#f12c0e]">15,00 €</span> <span
+                                class="font-[700] line-through ml-1 text-[0.65em]">20,00€</span>
+                        </p>
+
+                        <a class="bg-gray-200 border border-[#f12c0e] font-['Open_Sans'] hover:bg-red-400 hover:border-black hover:text-white hover:transition-transform px-2 py-2 rounded text-center text-sm uppercase w-44"
+                            href="#">
+                            Ajouter au panier
+                        </a>
+                    </div> <!-- DESCRIPTION end -->
+                </div> <!-- DISPLAY-SM end -->
+            </div> <!-- OFFER2 end -->
+
+            <!-- OFFER3 start -->
+            <div class="bg-white xl:w-[48.5%] mb-7 relative">
+                <span class="absolute bg-[#f12c0e] right-1/2 px-2 rounded-xl xl:right-5 text-white -top-2 translate-x-1/2">
+                    -5,00 €
+                </span>
+
+                <!-- DISPLAY-SM start -->
+                <div class="sm:flex">
+                    <img class="object-cover h-32 xl:h-56 xl:w-56 sm:h-48 sm:m-4 sm:w-48 w-full" src="img/poulet.jpeg" alt="poulet">
+
+                    <!-- DESCRIPTION start -->
+                    <div class="p-4 sm:flex sm: flex-col sm:justify-center">
+
+                        <h3 class="font-['Montserrat'] font-[700] mb-2 text-xl">Poulet</h3>
+
+                        <p class="font-['Open_Sans'] font-[5] italic mb-2 text-sm">
+                            Sauce tomate, mozzarella, poulet, ananas et sauce barbecue
+                        </p>
+
+                        <p class="font-['Open_Sans'] mb-6">
+                            <span class="font-[700] text-[#f12c0e]">25,00 €</span> <span
+                                class="font-[700] line-through ml-1 text-[0.65em]">30,00€</span>
+                        </p>
+
+                        <a class="bg-gray-200 border border-[#f12c0e] font-['Open_Sans'] hover:bg-red-400 hover:border-black hover:text-white hover:transition-transform px-2 py-2 rounded text-center text-sm uppercase w-44"
+                            href="#">
+                            Ajouter au panier
+                        </a>
+                    </div> <!-- DESCRIPTION end -->
+                </div> <!-- DISPLAY-SM end -->
+            </div> <!-- OFFER3 end -->
+
+            <!-- OFFER4 start -->
+            <div class="bg-white xl:w-[48.5%] mb-7 relative">
+                <span class="absolute bg-[#f12c0e] right-1/2 px-2 rounded-xl xl:right-5 text-white -top-2 translate-x-1/2">
+                    -5,00 €
+                </span>
+
+                <!-- DISPLAY-SM start -->
+                <div class="sm:flex">
+                    <img class="object-cover h-32 xl:h-56 xl:w-56 sm:h-48 sm:m-4 sm:w-48 w-full" src="img/hawaien.jpeg" alt="hawaien">
+
+                    <!-- DESCRIPTION start -->
+                    <div class="p-4 sm:flex sm: flex-col sm:justify-center">
+
+                        <h3 class="font-['Montserrat'] font-[700] mb-2 text-xl">Hawaïen</h3>
+
+                        <p class="font-['Open_Sans'] font-[5] italic mb-2 text-sm">
+                            Sauce tomate, mozzarella, jambon et ananas
+                        </p>
+
+                        <p class="font-['Open_Sans'] mb-6">
+                            <span class="font-[700] text-[#f12c0e]">16,00 €</span> <span
+                                class="font-[700] line-through ml-1 text-[0.65em]">21,00€</span>
+                        </p>
+
+                        <a class="bg-gray-200 border border-[#f12c0e] font-['Open_Sans'] hover:bg-red-400 hover:border-black hover:text-white hover:transition-transform px-2 py-2 rounded text-center text-sm uppercase w-44"
+                            href="#">
+                            Ajouter au panier
+                        </a>
+                    </div> <!-- DESCRIPTION end -->
+                </div> <!-- DISPLAY-SM end -->
+            </div> <!-- OFFER1 end -->
+
+        </div> <!-- DISPLAY-CARDS-XL end -->
+    </div> <!-- CONTAINER end -->
+
+</body>
+
+</html>

@@ -1,0 +1,18 @@
+body{
+    width: 1080px;
+    margin:auto;
+    font-family: 'Orbitron', sans-serif;
+}
+
+#chrono, .bouton{
+    display: flex;
+    justify-content: center;
+}
+
+body{
+    background-color: black;
+}
+
+div{
+    color:white;
+}

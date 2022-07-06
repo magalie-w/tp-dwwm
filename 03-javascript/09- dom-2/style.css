@@ -1,0 +1,19 @@
+#square{
+    border: 1px solid #000;
+    width: 100px;
+    height: 100px;
+    transition: 0.5s;
+}
+
+.bg-red{
+    background-color: red;
+}
+
+.circle{
+    border-radius: 50%;
+}
+
+ /* Element qui a l'id square : pour gérer les priorités */
+#square.rect{ 
+    width: 200px;
+}

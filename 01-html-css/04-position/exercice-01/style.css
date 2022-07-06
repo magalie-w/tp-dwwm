@@ -1,0 +1,35 @@
+body{
+    height: 100vh;
+}
+
+.image{
+    background-image: url("img/chaton.jpeg");
+    background-repeat:no-repeat ;
+    width: 630px;
+    height: 330px;
+}
+
+.texte{
+    color:white;
+    text-shadow: 2px 2px black;
+}
+
+.square{
+    position: relative;
+    /*image centrer au milieu*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.little-square{
+    position: absolute;
+    /* bottom:20px;
+    right: 20px; image en bas à droite*/ 
+}
+
+.calque{
+    width: 630px;
+    height: 330px;
+    background-color: rgba(0,0,0,0.3); /*ou opacity:0.5*/
+}

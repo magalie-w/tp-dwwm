@@ -1,0 +1,16 @@
+LIENS
+
+- https://caniuse.com/
+- https://www.w3schools.com
+- https://validator.w3.org/
+- https://websitesetup.org/html5-periodical-table/
+- https://cssgradient.io/
+
+https://html-css-js.com/css/generator/box-shadow/
+https://www.toptal.com/designers/subtlepatterns?adnetwork=search&keyword=toptal%20subtle%20patterns&creative=354748341579&campaignid=1592880893&adgroupid=61023652072&matchtype=e&network=g&device=c&devicemodel=&adposition=&noun=&gclid=EAIaIQobChMI9tPK1uOk9wIVZoFQBh39kwImEAMYASAAEgKXF_D_BwE
+https://fonts.google.com/
+
+https://css-tricks.com/how-css-perspective-works/
+
+EXTENSIONS
+- Live server (démarer en bas de VScode)

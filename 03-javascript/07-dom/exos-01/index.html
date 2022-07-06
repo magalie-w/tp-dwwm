@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exos</title>
+</head>
+<body>
+    <!-- 1. Créer une variable title où on va stocker le h1 qui a l'id #title
+Modifier le contenu du h1 par "Hey, j'ai changé mon titre en JavaScript"
+2. Créer une balise p en JavaScript, ajouter dans son contenu "Un super paragraphe en JS". Ajouter la balise p dans la première div qui a la classe .container -->
+
+    <h1 id="title">Titre</h1>
+
+    <div class="container">
+        <p>Ceci est un paragraphe</p>
+    </div>
+
+    <div>
+        Deuxième paragraphe
+    </div>
+
+    <script>
+        var title = document.getElementById("title");
+        title.textContent = "Hey, j'ai changé mon titre en JavaScript";
+        console.log(title);
+
+
+        var paragraphe = document.createElement("p");
+        paragraphe.textContent = "Un super paragraphe en JS";
+        console.log(paragraphe);
+
+        var divByClass = document.getElementsByClassName("container");
+        console.log(divByClass[0]);
+
+        divByClass[0].appendChild(paragraphe);
+    </script>
+    
+</body>
+</html>

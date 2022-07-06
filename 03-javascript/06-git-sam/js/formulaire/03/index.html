@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <form action="" method="">
+        <div>
+            <label for="email">E-mail</label>
+            <input type="email" name="email" id="email" onkeyup="verifEmail(this);"/> <!-- Pour vérifier le mail -->
+        </div>
+
+        <div>
+            <label for="password">Mot de passe</label>
+            <input for="password" name="pwd" id="pwd">
+        </div>
+
+        <div>
+            <input type="checkbox" value="register" name="register" id="register"/>
+            <label for="register">Enregistrer le mot de passe</label>
+        </div>
+
+        <div>
+            <label for=""></label>
+            <span id="captcha_calcul"></span>
+            <input type="text" name="captcha" id="captcha" onkeyup="verifCalcul(this)"/>
+        </div>
+
+        <div>
+            <button type="submit" disabled>Se connecter</button>
+        </div>
+    </form>
+
+    <script src="script.js"></script>
+    
+</body>
+</html>

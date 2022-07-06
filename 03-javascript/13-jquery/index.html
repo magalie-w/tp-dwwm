@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQuery</title>
+</head>
+
+<body>
+    <h1 id="title">Good Bye JavaScript</h1>
+    <h1>GoodBye JavaScript again</h1>
+
+    <button>Cacher</button>
+
+    <div class="square"></div>
+    <button>Bouge ton carré</button>
+
+    <div>
+        <div class="container">A</div>
+
+        <div class="container">
+            <p>B</p>
+        </div>
+
+        <div class="container"></div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script>
+        document.getElementsByTagName("h1")[0].textContent = "Blabla"; //est un élément JS
+        $("#title").text("Hello jQuery"); //est un objet jQuery
+        $("h1").eq(1).html("I like jQuery"); //eq(1) séléctionne l'index 1
+
+        $("h1").css("color", "blue"); //Mets tous les h1 en bleu
+
+        $("h1").last().css({
+            "background-color": "red",
+            "border": "1px solid blue",
+        });
+
+        // cache les h1 au click du bouton
+        $("button").first().click(function () {
+            //$("h1").hide();
+            //$("h1").show();
+            //$("h1").toggle();
+            //$("h1").fadeOut();
+            //$("h1").fadeIn();
+            $("h1").fadeToggle(); //ou slideToggle();
+        });
+
+        $(".square").css({
+            backgroundColor: "red",//"background-color" : "red"
+            width: 100,
+            height: 100,
+            position: "absolute",
+        });
+
+        //Animation sur le carré
+        var counter = 0;
+        var direction = "true";
+
+        $("button").last().click(function () {
+            if (counter++ == 5) {
+                direction = !direction;
+                counter = 1;
+            }
+
+            $(".square").animate({
+                left: direction ? "+=200" : "-=200", //Si direction est true, on fait +=200 sinnon -=200
+            });
+        });
+
+        $("body > div").first().children().eq(1).next().text(); //affiche c
+        $("body > div").first().parent(); //Sélectionne la balise body*
+        $("body > div").first().find("p").text(); // Affiche B
+
+    </script>
+</body>
+</html>

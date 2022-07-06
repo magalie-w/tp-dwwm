@@ -1,0 +1,83 @@
+
+.container{
+    margin:auto;
+    width: 1140px;
+} 
+
+.margin{
+    margin-top:20px;
+}
+
+.flex{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.red{
+    background-color: red;
+    width: 20%;
+    height: 100px;
+}
+
+.blue{
+    background-color: blue;
+    width: 73%;
+    height: 100px;
+}
+
+.block{
+    width: 20%;
+}
+
+.grey{
+    background-color: lightgrey;
+    height: 200px;
+}
+
+.yellow{
+    background-color: yellow;
+    height: 50px;
+}
+
+.trait{
+    background-color: lightgrey;
+    height: 28px;
+}
+
+/* PC Portable */
+@media (max-width:1199px){
+    .container{
+        width: 80%;
+    }
+}
+
+/* Tablette */
+@media (min-width:769px) and (max-width:991px) {
+    div > .block, body > .container{
+        width: 48%;
+    }
+
+    .desktop, .tablet{
+    display: block;
+    }
+}
+
+/* Smartphone */
+@media (max-width:767px) and (min-width:0) {
+    .red{
+        display: none;
+    }
+
+    .blue, .block, .block > div{
+        width: 100%;
+    }
+
+    .block{
+        margin-top:10%;
+    }
+
+    .desktop, .tablet{
+        display: none;
+        }
+}

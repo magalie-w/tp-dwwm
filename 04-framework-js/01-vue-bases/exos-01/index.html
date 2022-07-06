@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!---Créer les données (data) name et age
+        - Reliez ces données à deux champs de saisie <input />
+        - Afficher le nom et l'âge dans un cadre fait par vos soins en CSS
+        - Utilisez une propriété calculée pour afficher votre âge avec 10 ans de plus
+        - Afficher le nombre de caractères de votre nom
+        - Afficher votre nom en majuscules
+        - N'affichez le cadre que si le nom et l'âge sont valides. Sinon, affichez un cadre rouge disant que le nom et l'âge ne sont pas valides
+        - Utilisez v-show ou v-if pour afficher un message à côté des champs si le nom a plus de 15 caractères et que l'âge dépasse 100 ans ou qu'il est plus petit que 1.
+        - Faites une classe CSS pour les input qui ajoute une bordure et un fond rouge en cas d'erreur
+        - Ajouter un bouton "Générer une personne". Au clic, on générera un nom de personne aléatoire à partir d'un tableau et un âge aléatoire entre 1 et 100. Toutes les données de la vue doivent être mises à jour.
+        - Assurez-vous qu'une personne aléatoire soit générée lors du chargement de la page
+        - BONUS: Créer une directive qui mets le focus sur le champ nom lors du chargement de la page
+        - BONUS: Ajouter un select qui permet de choisir le genre de la personne. Changer la couleur du cadre en fonction du genre (Bleu ou rose par exemple) -->
+
+    <div id="app" v-cloak>
+        <div class="form">
+            <div class="donnees">
+                <label name="name">Nom </label>
+                <input v-focus type="text" v-model="name" name="name" :class="{ borderRed: name.length > 15 }">
+                <div class="show" v-show="name.length > 15">Le nom a plus de 15 caractères</div>
+            </div>
+
+            <div class="donnees">
+                <label name="age">Age </label>
+                <input type="number" v-model="age" name="age"
+                :class="{ borderRed: age < 0 || age > 100 }">
+                <div class="show" v-show="age < 0 || age > 100">L'âge n'est pas compris entre 1 et 100 ans</div>
+            </div>
+
+            <div class="gender">
+                <label name="gender">Genre </label>
+                <select id="gender" v-model="gender">
+                    <option value="female">Femme</option>
+                    <option value="male">Homme</option>
+                </select>
+            </div>
+
+            <div class="donnees">
+                <button @click="random">Générer une personne</button>
+            </div>
+        </div>
+
+        <div class="texte" v-if="name && age"
+             :class="{ 'bg-blue': gender == 'male', 'bg-pink': gender == 'female' }">
+            <p>
+               Mon nom est <strong>{{ name }}</strong> et j'ai <strong>{{ age }}</strong>.
+               <br>
+               Dans 10 ans j'aurai <strong>{{ dix(age) }}</strong>.
+               <br>
+               Mon nom se compose de <strong>{{ name.length }}</strong> caractères.
+               <br>
+               Mon nom en majuscules est <strong>{{ name.toUpperCase() }}</strong>.
+            </p>
+        </div>
+
+        <div class="bgRed" v-else>
+            <p>
+                Veuillez entrer un nombre et un âge valide.
+            </p>
+        </div>
+
+    </div>
+
+    <script src="https://unpkg.com/vue@3"></script>
+
+    <script>
+        var app = Vue.createApp({
+            data() {
+                return {
+                    names: ["Jean", "Josette", "Hervé", "Hubert", "Danielle", "José"],
+
+                    name: "",
+                    age: "",
+                    gender: "",
+                }
+            },
+
+            methods: {
+                dix(age) {
+                    return age += 10;  
+                },
+
+                random() {
+                    indexName = Math.floor(Math.random() * (5 - 0) + 0);
+                    this.name = this.names[indexName];
+
+                    this.age = Math.floor(Math.random() * (100) + 1);
+                }
+            },
+
+            // focus sur le label au chargement de la page
+            directives: {
+                focus: {
+                    mounted(el) {
+                        el.style.background = "yellow";
+                        // el.focus();
+                    }
+                }
+            },
+
+            // Quand la page est chargée pour afficher les noms + âges
+            mounted() {
+                    this.random();
+                }
+
+        }).mount("#app");
+    </script>
+    
+</body>
+</html>

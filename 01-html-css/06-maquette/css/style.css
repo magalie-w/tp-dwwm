@@ -1,0 +1,261 @@
+/* @font-face {
+    font-family: 'BallPark';
+    font-weight: 400;
+    src: url('../fonts/ballpark.eot') format('embedded-opentype');
+    src: url('../fonts/ballpark.woff') format('woff');
+    src: url('..fonts/ballpark.ttf') format('truetype');
+    src: url('../fonts/ballpark.svg') format('svg');
+} */
+
+body{
+    background-image: url("../img/bg.png");
+    margin:0;
+}
+
+a{
+    text-decoration: none;
+}
+
+.container{
+    width: 1000px;
+    margin:auto;
+}
+
+*{
+    font-family:'Open Sans', sans-serif;
+}
+
+nav h2{
+    font-family: 'Playball', cursive;
+}
+
+/* nav h2{
+    font-family: 'BallPark', sans-serif;
+} */
+
+nav{
+   display: flex;
+   justify-content: space-between;
+   align-items: center; 
+}
+
+.liste-nav ul{
+    display: flex;
+    justify-content: right;
+}
+
+.liste-nav a{
+    color:black;
+    padding: 15px;
+    text-transform: uppercase;
+}
+
+.liste-nav li{
+    width: 100px;
+    list-style: none;
+    text-align: center;
+}
+
+.liste-nav li:hover a{
+    background-color: black;
+    transition: 0.5s;
+    color:white;
+    padding: 15px;
+}
+
+hr{
+    border: 1px solid black;
+    margin:0;
+}
+
+header img{
+    width: 100%;
+    height: 300px;
+    border-radius: 5px 5px 0 5px;
+    object-fit: cover;
+    box-shadow: 0px 14px 40px 0px #8c8c8c79;
+    bottom: 5px;
+    position: relative;
+}
+
+header{
+    /* background-image: url("../img/new-york.jpg"); */
+    /* background-position: -700px -150px; */
+    color: white;
+    text-align: center;
+}
+
+.calque{
+    width: 100%;
+    height: 300px;
+    position: absolute;
+    bottom:10px;
+    border-radius:5px 5px 0px 5px;
+    z-index: 1;
+    background-color: rgba(0,0,0,0.3);
+}
+
+.image{
+    position: relative;
+}
+
+.texte{
+    position:absolute;
+    z-index: 1;
+    width: 1000px;
+    top:100px;
+
+}
+
+.texte a{
+    background-color: black;
+    color:white;
+    padding:10px 20px;
+    border-radius: 5px;
+}
+
+.texte a:hover{
+    background-color: transparent;
+    color:white;
+    border: 1px solid black;
+}
+
+main section{
+    position: relative;
+    bottom:10px;
+}
+
+section{
+    display: flex;
+    position: relative;
+}
+
+.first-article{
+    width: 750px;
+}
+
+.first-article p{
+    text-align: justify;
+    margin-right: 5%;
+}
+
+.arrow{
+    position: relative;
+    right: 90px;
+    bottom: 50px;
+}
+
+.avatar{
+    width: 40%;
+    border: 1px solid black;
+}
+
+.aside-article{
+    background-color: grey;
+    box-shadow: 0px 14px 40px 0px #8c8c8c79;
+    width: 250px;
+    height: 450px;
+    padding:15px;
+    text-align: center;
+    color:white;
+    border-radius: 0 0 10px 10px;
+}
+
+.aside-article p{
+    text-align: justify;
+}
+
+.aside-article ul{
+    padding: 0;
+}
+
+/* SPRITE */
+    /* Taille des icones */
+.icone li{
+    width: 45px;
+    height: 45px;
+    display: inline-block;
+    background: url("../img/sprite.png") no-repeat;
+    background-size: 350px;
+    margin-right: 5px;
+}
+
+/* .icone li:hover{
+    background-position-y: ;
+} */
+
+.facebook{
+    background-position: left top;
+}
+
+.twitter{
+    background-position: 18% top !important;
+}
+
+.instagram{
+    background-position: 50% top !important;
+}
+
+.google{
+    background-position: right top !important;
+}
+
+    /* Survole des icones */
+.facebook:hover, .facebook:focus{
+    background-position: left bottom;
+    transition: 1s;
+}
+
+.twitter:hover{
+    background-position: 18% bottom !important;
+    transition: 1s;
+}
+
+.instagram:hover{
+    background-position: 50% bottom !important;
+    transition: 1s;
+}
+
+.google:hover{
+    background-position: right bottom !important;
+    transition: 1s;
+}
+/* Fin sprite */
+
+footer{
+    display: flex;
+    /* justify-content: space-between; */
+}
+
+footer > div{
+    width: 33.33%; /*mieux que faire un space-between pour mieux espacer sur la largeur*/
+}
+
+.photos ul{
+    display: flex;
+}
+
+.photos img{
+    list-style: none;
+}
+
+.list-ami{
+    display: flex;
+    list-style-image: url("../img/list-style.png");
+}
+
+.list-ami li{
+    color:#840400;   
+}
+
+.list-ami ul{
+    padding:0;
+    margin-top:0;
+    display: flex;
+    flex-flow:wrap column;
+    height: 100px;
+    width: 350px;
+}
+
+/* Page contact */
+

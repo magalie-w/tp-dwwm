@@ -1,0 +1,40 @@
+.flex{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    /* width: 1000px;
+    margin:auto; */
+}
+
+.flex div{
+    background-color: red;
+    width: 30%;
+    height: 50px;
+    margin-bottom:10px;
+}
+
+/* Le CSS doit être dans le @mediapour le responsive*/
+
+/* Tablette 769px à 992px */
+@media (min-width:769px) and (max-width:992px){
+    .flex div{
+        width: 45%;
+        background-color: blue;
+    }
+}
+
+/* Smartphone 0 à 768px INCLUS*/
+
+@media (max-width:768px){
+    .flex div{
+        width: 100%;
+    }
+    
+}
+
+/* On peut faire un CSS spécial pour l'impression */
+@media print{
+    body{
+        display: none;
+    }
+}

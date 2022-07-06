@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exos-01</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="flex">
+        <div id="cart-1"></div>
+
+        <div id="cart-2"></div>
+
+        <div id="cart-3"></div>
+    </div>
+
+    <script>
+        //1. Créer 3 cartes en HTML / CSS avec une bordure grise
+        //2. Au clic sur l'une des cartes, ajouter une classe "selected" sur cette carte. Appliquer le CSS suivant à cette classe : bordure noire, ombre et fond gris.
+        //3. Si on clique sur une nouvelle carte, on doit retirer la classe "selected" de toutes les autres cartes avant de l'ajouter sur cette carte.
+    
+        var cartId1 = document.getElementById("cart-1");
+        var cartId2 = document.getElementById("cart-2");
+        var cartId3 = document.getElementById("cart-3");
+
+        cartId1.addEventListener("click", function() {
+            cartId1.classList.toggle("selected"); //toggle pour activer et désactiver sinon add
+            cartId2.classList.remove("selected");
+            cartId3.classList.remove("selected");
+        });
+        
+        cartId2.addEventListener("click", function() {
+            cartId2.classList.toggle("selected");
+            cartId1.classList.remove("selected");
+            cartId3.classList.remove("selected");
+        });
+
+        cartId3.addEventListener("click", function() {
+            cartId3.classList.toggle("selected");
+            cartId1.classList.remove("selected");
+            cartId2.classList.remove("selected");
+        });
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+body {
+  margin: 0;
+  background-image: url(../public/background.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: 'Open sans', sans-serif;
+}
+
+.container {
+  width: 600px;
+  margin: 50px auto 0;
+}
+
+.flex {
+  display: flex;
+}
+
+.loader {
+  background-color: #fff;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2);
+}
+
+.burger {
+  background-color: #fff;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2);
+  gap: 10px;
+}
+
+.burger img {
+  height: 150px;
+  width: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.burger .text {
+  justify-content: space-between;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.burger h2 {
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.burger p {
+  margin: 0;
+}
+
+.burger .price {
+  font-family: 'Dancing Script', sans-serif;
+  font-weight: 700;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 25px;
+  background-color: #fbbf24;
+  color: #fff;
+  border-radius: 10px;
+  font-size: 14px;
+  padding: 10px 15px;
+  text-decoration: none;
+  transition: 0.5s;
+  border: 0;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #b45309;
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 100%;
+  }
+}

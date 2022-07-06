@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercice 1</title>
+    <style>
+        .bg-grey {
+            background-color: #f0f0f0;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .bg-grey > div {
+            margin-bottom: 20px;
+        }
+
+        .bg-yellow {
+            background-color: lightyellow;
+            padding: 1px 20px;
+        }
+
+        .bg-red {
+            background-color: indianred;
+            color: #fff;
+            padding: 20px;
+        }
+
+        .bg-blue {
+            background-color: lightblue;
+        }
+
+        .bg-pink {
+            background-color: pink;
+        } 
+
+        [v-cloak] {
+            display: none;
+        }
+
+        input {
+            border: 3px solid transparent;
+        }
+
+        .error {
+            background-color: #ffc4c4;
+            border-color: indianred;
+            margin-right: 8px;
+        }
+
+        .error + span {
+            color: indianred;
+        }
+    </style>
+</head>
+<body>
+    <div id="app" v-cloak>
+        <div class="bg-grey">
+            <div>
+                <label for="name">Nom: </label>
+                <input v-focus :class="{ error: name.length <= 0 || name.length > 15 }" type="text" v-model="name" id="name">
+                <span v-if="name.length <= 0 || name.length > 15">Maximum 15 caractères</span>
+            </div>
+            <div>
+                <label for="age">Âge: </label>
+                <input :class="{ error: age <= 0 || age > 100 }" type="text" v-model="age" id="age">
+                <span v-if="age <= 0 || age > 100">Veuillez entrer un âge compris entre 1 et 100</span>
+            </div>
+            <div>
+                <label for="gender">Genre</label>
+                <select id="gender" v-model="gender">
+                    <option value="female">Femme</option>
+                    <option value="male">Homme</option>
+                </select>
+            </div>
+
+            <button @click="generate">Générer une personne</button>
+        </div>
+
+        <div class="bg-yellow"
+             :class="{ 'bg-blue': gender == 'male', 'bg-pink': gender == 'female' }" v-if="name.length > 0 && age > 0 && age <= 100">
+            <p>Mon nom est <strong>{{ name }}</strong> et j'ai <strong>{{ age }}</strong> ans.</p>
+            <p>Dans 10 ans, j'aurai <strong>{{ old }}</strong> ans.</p>
+            <p>Mon nom se compose de <strong>{{ name.length }}</strong> caractères.</p>
+            <p>Mon nom en majuscules est <strong>{{ name.toUpperCase() }}</strong>.</p>
+        </div>
+        <div class="bg-red" v-else>
+            Veuillez entrer un nom et un âge valide.
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/vue@3"></script>
+    
+    <script>
+        Vue.createApp({
+            data() {
+                return {
+                    randomNames: ['Toto', 'Titi', 'Tata', 'Tutu', 'Tete'],
+                    name: 'Fiorella',
+                    age: 2,
+                    gender: '',
+                };
+            },
+            computed: {
+                old() {
+                    return +this.age + 10;
+                },
+            },
+            methods: {
+                generate() {
+                    let i = Math.floor(Math.random() * this.randomNames.length);
+                    this.name = this.randomNames[i];
+                    this.age = Math.floor(Math.random() * 100) + 1;
+                }
+            },
+            directives: {
+                focus: {
+                    mounted(el) {
+                        el.style.backgroundColor = 'yellow';
+                        // el.focus();
+                    }
+                }
+            },
+            mounted() { // Le code suivant s'exécute au chargement de la page
+                this.generate();
+            },
+        }).mount('#app');
+    </script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+TP Bootstrap vs Tailwind :
+
+Nous allons travailler en groupe de 3/4 personnes aujourd'hui (4 groupes max).
+2 groupes vont travailler sous Bootstrap et 2 groupes vont travailler avec Tailwind.
+Nous avons une maquette commune à intégrer. Chaque personne du groupe devra intégrer la maquette avec son propre code.
+Le groupe pourra s'entraider sur le framework et sa documentation.
+
+Groupe 1 (Bootstrap) : William, Julien H, Steven
+Groupe 2 (Bootstrap) : Nabil, Yanis, Dylan
+Groupe 3 (Bootstrap) : Gwenael, Maxime, Corentin
+Groupe 4 (Tailwind) : Quentin, Florian, Magalie, Kevin, Julien, Donavan
+
+Chaque personne a le droit à un joker pour switcher de groupe (de framework). Si vous voulez utiliser Bootstrap et Tailwind en même temps (non conseillé), vous pouvez
+configurer Tailwind avec un préfixe sur ce lien : https://tailwindcss.com/docs/configuration#prefix
+
+Pour vous aider, vous pouvez utiliser les salons Discord avec le partage d'écran. Je vous conseille également le plugin Live Share de VS Code.
+
+Pizza
+
+Vous devez intégrer la maquette jointe (maquette.png).
+Les images sont fournies.
+La police des titres est Montserrat et la police de texte est Open Sans.
+La couleur utilisée est #f12c0e.
+Le hover du menu est une bordure en bas du lien soulignée avec une marge.

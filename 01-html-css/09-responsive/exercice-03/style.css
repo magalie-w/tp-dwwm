@@ -1,0 +1,78 @@
+body{
+    background-color: chocolate;
+    margin:0;
+    height: 5000px;
+}
+
+.burger-menu{
+    position: fixed;
+    z-index: 1;
+    background-color: rgba(255,255,255, 0.9);
+    width: 100%;
+    height: 100%;
+    transform: translateX(100%); /* Y + mettre en négatif pour l'ouverture de haut en bas*/
+    transition:0.5s;
+}
+
+.burger-menu ul{
+    padding-top:100px;
+}
+
+/* Sélectionner qui suit l'élement */
+#burger-click:checked + .burger-menu{
+    transform: translateX(20%); /* Y + mettre en négatif pour l'ouverture de haut en bas*/
+}
+
+#burger-click:checked ~ header span{
+    background-color: black;
+    position: relative;
+}
+
+#burger-click:checked ~ header span:first-child{
+    transform: rotate(45deg);
+    top:10px;
+}
+
+#burger-click:checked ~ header span:nth-child(2){
+    opacity: 0;
+}
+
+#burger-click:checked ~ header span:last-child{
+    transform: rotate(-45deg);
+    top:-10px;
+}
+
+#burger-click{
+    display: none;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    padding:30px 20px;
+    position: fixed;
+    z-index:1;
+    width: 100%;
+    box-sizing: border-box; /* border-box fait que le padding est compris dans les 100% de largeur */
+}
+
+header h2{
+    margin:0;
+}
+
+/* .buregr{
+    position: relative;
+    z-index:2;
+} */
+
+.burger span{
+    display: block;
+    width: 32px;
+    height: 4px;
+    margin: 6px 0;
+    background-color: #fff;
+    transition:0.5s;
+
+}

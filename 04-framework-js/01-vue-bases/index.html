@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Framework - Vue</title>
+
+    <style>
+        .success {
+            background-color: lightseagreen;
+            color: #fff;
+        }
+
+        .error {
+            background-color: indianred;
+            color: #fff;
+            padding: 10px;
+        }
+
+        /* Ne pas voir les moustaches {} avant la compilation */
+        [v-cloak] {
+            display: none;
+        }
+
+    </style>
+</head>
+
+<body>
+    
+    <div id="app" v-cloak>
+        <h1 :title="prenom"> {{ message }} - {{ reversemessage }}</h1>
+        <button @click="changeMessage">Changer message</button>
+
+        <div v-if="success">
+            Félicitations !
+        </div>
+
+        <div v-else class="error">
+            En attente de validation..
+        </div>
+
+        <!-- prevent pour ne pas afficher les menus au click droit -->
+        <button @click.prevent="success = !success">Valider</button>
+
+        <ul>
+            <li v-for="contact in contacts">
+                {{ contact }}
+            </li>
+        </ul>
+
+        <!-- Liaison des champs  -->
+        <input type="text" v-model="message" @keyup.ctrl.enter="display('test')">
+        <input type="checkbox" v-model="success">
+
+        <div :class="{ success: success, 'error danger': !success }"
+             :style="{ border: success ? '5px solid #000': '0' }">
+            {{ success ? "Succès" : "Erreur" }}
+        </div>
+
+        <ul>
+            <li v-for="(car, index) of cars">
+                {{ index }}
+                Le véhicule {{ car.brand + " " + car.model}} est sorti en {{ car.year }}.
+                Il y a {{ currentYear - car.year }} ans.
+            </li>
+        </ul>
+
+    </div>
+
+    <script src="https://unpkg.com/vue@3"></script>
+
+    <script>
+
+        var app = Vue.createApp({
+            //Les datas représentent les var
+            data() {
+                return {
+                    message: "Salut Vue JS",
+                    prenom: "Magalie",
+                    success: false,
+                    contacts: ["Fiorella", "Marina"],
+                    cars: [
+                        { brand: "Porsche", model: "911", year: 2010 },
+                        { brand: "Maseratti", model: "Ghibli", year: 2020 },
+                        { brand: "Peugeot", model:"306", year: 1995 },
+                    ],
+                    currentYear: new Date().getFullYear(),
+                }
+            },
+
+            //methods représentent les fonctions
+            methods: {
+                changeMessage() {
+                    //on récupère  les data et les methods
+                    console.log(this.message);
+                    this.message = "J'adore Vue JS";
+                },
+
+                display(message) {
+                    alert(message);
+                }
+            },
+
+            computed: {
+                reverseMessage() {
+                    console.log("call");
+                    return this.message.split("").reverse().join("");
+                },
+            },
+
+            beforeMount() {
+                console.log("before");
+            },
+
+            // Quand la page est chargée
+            mounted() {
+                console.log("mounted");
+            }
+
+        }).mount("#app");
+
+    </script>
+</body>
+</html>

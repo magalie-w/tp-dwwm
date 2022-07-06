@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>users</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <!-- *ngFor voir correction -->
+    <ion-item>
+      <ion-avatar>
+        <img src="/assets/fiorella.png" alt=""/>
+      </ion-avatar>
+      <ion-label>
+        <h1>{{ users[0].name }}</h1>
+        <p>{{ users[0].poste }}</p>
+      </ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-avatar>
+        <img src="/assets/matthieu.png" alt=""/>
+      </ion-avatar>
+      <ion-label>
+        <h1>{{ users[1].name }}</h1>
+        <p>{{ users[1].poste }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

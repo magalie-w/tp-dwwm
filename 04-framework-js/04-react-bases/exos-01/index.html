@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exos-01</title>
+</head>
+
+<body>
+
+    <!-- 
+        Vous allez créer un composant Counter. Ce composant doit afficher une valeur initiale (0 par exemple) ainsi que deux boutons - et +.
+
+        On doit pouvoir incrémenter / décrémenter le compteur au clic sur l'un des boutons.
+
+        En bonus, vous ajouterez des props au compteur comme une valeur initiale personnalisée ou alors une valeur maximale que le compteur ne doit jamais pouvoir dépasser. Si on atteint cette valeur, il faudra masquer le bouton + 
+    -->
+
+    <div id="root"></div>
+
+
+    <!-- Charger REACT -->
+    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+
+    <!-- JSX -->
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+    <!-- Charge le composant -->
+    <script type="text/babel">
+        class Button extends React.Component {
+            constructor(props) {
+                super(props);
+                this.state = { compte : 0 };
+            }
+
+            moins() {
+                this.setState({ compte: --this.state.compte })
+            }
+
+            plus() {
+                this.setState({ compte: ++this.state.compte })
+            }
+
+            render() {
+                return (
+                    <div>
+                        <button onClick={this.moins.bind(this)}>-</button>
+
+                        <span> {this.state.compte} </span>
+                
+                        <button onClick={this.plus.bind(this)}>+</button>
+                    </div>
+                );
+            }
+            
+        }
+
+        ReactDOM.render(<Button />, document.getElementById('root'));
+    </script>
+    
+</body>
+</html>

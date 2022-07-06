@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exos-02</title>
+
+    <style>
+        h1{
+            font-size:15px;
+        }
+
+        #rectangle{
+            width: 10px;
+            height: 10px;
+            background-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    
+    <h1 id="title">Un titre qui s'agrandit</h1>
+
+    <h1>Boutons qui agit sur le rectangle</h1>
+
+    <button id="bHeight">Taille</button>
+    <button id="bGreen">Vert</button>
+    <button id="bColorInitiale">Couleur initiale</button>
+    <button id="bHide">Disparaître</button>
+    <button id="bShow">Réapparaître</button>
+
+    <br><br>
+
+    <div id="rectangle"></div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+    <script>
+        //Créér 5 boutons et un rectangle. Chaque bouton provoque une action sur le rectangle.
+        //Créer un texte qui s'agrandit au clic. Si on reclique dessus, il reprend sa taille d'origine. Pour pouvoir faire cela, il va falloir mettre la taille de police initiale dans une variable.
+
+        var taille = false;
+
+        $("#title").click(function () {
+            if (taille == false) {
+                taille = !taille;
+                $("#title").css({
+                    "font-size" : "25px",
+                });
+
+            } else {
+                taille = !taille;
+                $("#title").css({
+                    "font-size" : "15px",
+                });
+            }
+        });
+
+        //Bouton 1 : augmente la hauteur de 10px, si il dépasse 100px, il remet la hauteur à 10px(fonction height())
+
+        $("#bHeight").click(function () {
+            $("#rectangle").css ({
+                height: "+=10",
+            });
+
+            if ($("#rectangle").height() > 100) {
+                $("#rectangle").css ({
+                height: 10,
+            });   
+            }
+        });
+
+        //Bouton 2 : mettre le rectangle en vert
+
+        $("#bGreen").click(function () {
+            $("#rectangle").css ({
+                "background-color" : "green",
+            });
+        });
+
+        //Bouton 3 : remettre les couleurs initiales
+
+        $("#bColorInitiale").click(function () {
+            $("#rectangle").removeAttr("style");
+            // $("#rectangle").css ({
+            //     "background-color" : "blue",
+            // });
+        });
+
+        //Bouton 4 : faire disparaître le rectangle
+        $("#bHide").click(function () {
+            $("#rectangle").css( {
+                display: "none",
+            })
+        });
+
+        //Bouton 5 : faire réaparaître le rectangle
+
+        $("#bShow").click(function () {
+            $("#rectangle").css( {
+                display: "block",
+            })
+        });
+    </script>
+    
+</body>
+</html>

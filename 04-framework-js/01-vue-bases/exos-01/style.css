@@ -1,0 +1,45 @@
+[v-cloak] {
+    display: none;
+}
+
+input {
+    outline: none;
+}
+
+#app .form{
+    background-color: lightgrey;
+    padding : 50px;
+}
+
+.form .donnees {
+    margin: 30px;
+}
+
+#app .texte {
+    background-color: lightyellow;
+    padding:50px;
+    margin-top: 20px;
+}
+
+.bgRed {
+    background-color: red;
+    padding: 50px;
+    margin-top: 20px;
+}
+
+.borderRed {
+    border: 1px solid red;
+}
+
+.show{
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.bg-pink{
+    background-color: pink !important;
+}
+
+.bg-blue{
+    background-color: blue !important;
+}

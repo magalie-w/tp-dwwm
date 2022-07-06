@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exos-01</title>
+</head>
+<body>
+    
+    <img src="chat.jpg" alt="image" id="image"/>
+
+    <h1 class="color">Ceci est un titre</h1>
+
+    <button id="bouton">Changer couleur</button>
+
+    <br><br>
+
+    <input type="text" id="form">
+    <input type="button" value="Envoyer">
+
+
+    <h2 id="content"></h2>
+    <input type="text" id="message">
+    <button id="add">Envoyer</button>
+
+    <script>
+        //Créer une page HTML, ajouter une balise img avec une image. Au survol, sur l'image, changer le src de l'image par une autre image.
+        document.getElementById("image").addEventListener("mouseenter", function() {
+            this.src = "avatar.jpeg";
+        })
+
+        document.getElementById("image").addEventListener("mouseleave", function() {
+            this.src = "chat.jpg";
+        })
+
+        //2. Ajouter une balise h1, lors du click sur celle-ci, changer la couleur du h1.
+        document.getElementsByClassName("color")[0].addEventListener("click", function() {
+            this.style.color = "pink";
+        })
+
+        //3. Ajouter un bouton. Lors du click sur celui-ci, changer le background color du body
+        document.getElementById("bouton").addEventListener("click", function(){
+            document.body.style.backgroundColor = "green";
+        })
+
+        //4. Créer un formulaire avec un input text et un bouton. Lors du clic sur le bouton, faire une alerte avec la valeur saisie dans le input
+        document.getElementById("form").addEventListener("change", function(){
+            alert(this.value);
+        })
+
+        //BONUS
+        //Créer un formulaire avec un champ
+        //On saisit une valeur dans ce champ et à chaque fois qu'elle change, on doit la récupérer et l'ajouter dans le contenu d'un h1 qu'on ajoutera dynamiquement dans le DOM
+        var add = document.getElementById('add'); //button
+        var message = document.getElementById('message'); //input
+
+        add.addEventListener('click', function (){
+            var message = document.getElementById('message');
+            document.getElementById('content').textContent = message.value;
+        })
+
+
+        //input est un keydown / keyup plus précis (copier/coller souris)
+        message.addEventListener('input', function(){
+            var message = document.getElementById('message');
+            document.getElementById('content').textContent = message.value;
+        })
+    
+    </script>
+</body>
+</html>
