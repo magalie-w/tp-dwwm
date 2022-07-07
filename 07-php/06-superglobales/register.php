@@ -29,10 +29,12 @@
                     $errors[] = 'L\'email est obligatoire.';
                 }
 
+                //filter_var filtre une variable
                 if (!empty($email) && !filter_var($email, FILTER_VALIDATE_EMAIL)) {
                     $errors[] = 'L\'email est invalide.';
                 }
 
+                //strlen calcule la taille d'un chaîne
                 if (strlen($password) < 8) {
                     $errors[] = 'Le mot de passe doit faire 8 caractères.';
                 }
