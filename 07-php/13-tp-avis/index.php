@@ -1,4 +1,13 @@
-
+<?php
+    $avis = [
+        [
+            "name" => "Fiorella",
+            "review" => "Très bon restaurant",
+            "note" => "",
+            "date" => "Vendredi 22 juillet 2022 à 10h30",
+        ],
+    ];
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -144,7 +153,7 @@
                     
                     <form action="" method="post" class="space-y-4 w-[500px]">
                         <div class="flex w-full items-center">
-                            <label for="name" class="w-[145px]">Nom</label>
+                            <label for="name" class="w-[145px]"></label>
                             <input type="text" name="name" id="name" placeholder="Votre nom" class="w-[500px]">
                         </div>
 
@@ -224,33 +233,50 @@
                 </div>
 
                 <!-- AVIS -->
-                <div class="mt-5 flex space-x-5">
-                    <div>
-                        <img src="img/circle-solid.svg" width="60px" alt="avatar" />
-                    </div>
 
-                    <div class="w-full border">
+                <?php
+                    foreach ($avis as $index => $avis) { ?>
+                    
+                    <div class="mt-5 flex space-x-5">
                         <div>
-                            <h2 class="bg-gray-200 rounded-t p-2">Fiorella Mota</h2>
+                            <img src="img/circle-solid.svg" width="60px" alt="avatar" />
                         </div>
 
-                        <div class="p-2">
-                            <div class="flex">
-                                <img src="img/star-regular.svg" width="20" alt="star avis" />
-                                <img src="img/star-regular.svg" width="20" alt="star avis" />
-                                <img src="img/star-regular.svg" width="20" alt="star avis" />
-                                <img src="img/star-regular.svg" width="20" alt="star avis" />
-                                <img src="img/star-regular.svg" width="20" alt="star avis" />
+                        <div class="w-full border">
+                            <div>
+                                <h2 class="bg-gray-200 rounded-t p-2">
+                                    <?php
+                                        echo $avis["name"];
+                                    ?>
+                                </h2>
                             </div>
 
-                            <div>Très bon restaurant</div>
-                        </div>
+                            <div class="p-2">
+                                <div class="flex">
+                                    <img src="img/star-regular.svg" width="20" alt="star avis" />
+                                    <img src="img/star-regular.svg" width="20" alt="star avis" />
+                                    <img src="img/star-regular.svg" width="20" alt="star avis" />
+                                    <img src="img/star-regular.svg" width="20" alt="star avis" />
+                                    <img src="img/star-regular.svg" width="20" alt="star avis" />
+                                </div>
 
-                        <div>
-                            <div class="bg-gray-200 rounded-b p-1 text-end">Mercredi 9 juillet 2022 à 11h43</div>
+                                <div>
+                                    <?php
+                                        echo $avis["review"];
+                                    ?>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="bg-gray-200 rounded-b p-1 text-end">
+                                    <?php
+                                        echo $avis["date"];
+                                    ?>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
+                <?php } ?>
             </div>
         </main>
     </div>
