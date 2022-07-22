@@ -4,7 +4,7 @@
             "name" => "Fiorella",
             "review" => "Très bon restaurant",
             "note" => "",
-            "date" => "Vendredi 22 juillet 2022 à 10h30",
+            "date" => "2022-02-09 11:43",
         ],
     ];
 ?>
@@ -270,7 +270,9 @@
                             <div>
                                 <div class="bg-gray-200 rounded-b p-1 text-end">
                                     <?php
-                                        echo $avis["date"];
+                                        $dateTime = strtotime($avis["date"]);
+                                        $dateTime = date("d m Y H\hi\m", $dateTime);
+                                        echo $dateTime;
                                     ?>
                                 </div>
                             </div>
