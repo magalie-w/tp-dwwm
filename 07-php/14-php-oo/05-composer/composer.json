@@ -1,0 +1,13 @@
+{
+    "name": "magalie/05-composer",
+    "description": "Découverte des Composer",
+    "authors": [
+        {
+            "name": "magalie",
+            "email": "magalie.waligora@gmail.com"
+        }
+    ],
+    "require": {
+        "symfony/var-dumper": "^6.1"
+    }
+}
