@@ -1,13 +1,15 @@
 {
-    "name": "magalie/05-composer",
-    "description": "Découverte des Composer",
+    "name": "matthieu/05-composer",
+    "description": "Découverte de Composer",
     "authors": [
         {
-            "name": "magalie",
-            "email": "magalie.waligora@gmail.com"
+            "name": "Matthieu Mota",
+            "email": "matthieumota@gmail.com"
         }
     ],
     "require": {
-        "symfony/var-dumper": "^6.1"
+        "symfony/var-dumper": "^6.0",
+        "michelf/php-markdown": "^1.9",
+        "illuminate/collections": "^9.22"
     }
 }
