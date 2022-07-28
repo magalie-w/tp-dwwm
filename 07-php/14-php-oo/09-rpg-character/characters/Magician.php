@@ -2,7 +2,11 @@
 
 class Magician extends Character
 {
-    protected $strength = 10;
-    protected $mana = 30;
+    public function __construct($name, $tribe)
+    {
+        parent::__construct($name, 'magician', $tribe);
+        $this->strength = 10;
+        $this->mana = 30;
+    }
 }
 ?>

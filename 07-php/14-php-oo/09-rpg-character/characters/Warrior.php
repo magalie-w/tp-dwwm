@@ -1,8 +1,12 @@
 <?php
 
-class warrior extends Character
+class Warrior extends Character
 {
-    protected $strength = 20;
-    protected $mana = 10;
+    public function __construct($name, $tribe)
+    {
+        parent::__construct($name, 'warrior', $tribe);
+        $this->strength = 20;
+        $this->mana = 10;
+    }
 }
 ?>

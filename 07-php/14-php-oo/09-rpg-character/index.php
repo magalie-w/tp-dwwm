@@ -4,7 +4,34 @@
     require "characters/Magician.php";
     require "characters/Hunter.php";
 
-    // new Character($_POST['name'], $_POST['class'], $_POST['tribe']);
+    if (!empty($_POST)) {
+        // On récupère le nom et la tribu en fonction de la class
+        if ($_POST["class"] == "warrior") {
+            $character = new Warrior($_POST["name"], $_POST["tribe"]);
+        }
+
+        if ($_POST["class"] == "magician") {
+            $character = new Magician($_POST["name"], $_POST["tribe"]);
+        }
+
+        if ($_POST["class"] == "hunter") {
+            $character = new Hunter($_POST["name"], $_POST["tribe"]);
+        }
+
+        // On affiche la valeur
+        echo "<div class='container mx-auto w-[500px]'>
+                <h1>Salut " . $character->getName() . "</h1>
+                <p>Tu es un " . $character->getClass() . " " . $character->getTribe() . "</p>
+
+                <ul class='list-disc'>
+                    <li>Ta santé: " . $character->getHealth() . "</li>
+                    <li>Ta force: " . $character->getStrength() . "</li>
+                    <li>Ta mana: " . $character->getMana() . "</li>
+                </ul>
+
+                <p>Je veux un autre personnage</p>
+            </div>";
+    }
 ?>
 
 <!DOCTYPE html>
@@ -46,25 +73,26 @@
                 <div>
                     <input type="radio" id="warrior" name="class" value="warrior" checked>
                     <label for="warrior">Guerrier</label>
-                    <img src="img/warrior.png" alt="" />
+                    <img src="img/warrior.jpg" alt="" />
                 </div>
 
                 <div>
                     <input type="radio" id="magician" name="class" value="magician" checked>
                     <label for="magician">Mage</label>
-                    <img src=img/magician.png alt="" />
+                    <img src=img/magician.jpg alt="" />
                 </div>
 
                 <div>
                     <input type="radio" id="hunter" name="class" value="hunter" checked>
                     <label for="hunter">Chasseur</label>
-                    <img src="img/hunter.png" alt="" />
+                    <img src="img/hunter.jpg" alt="" />
                 </div>
             </div>
 
             <button class="bg-blue-500 text-white p-2 rounded">Créer</button>
 
         </form>
+
     </div>
 </body>
 </html>

@@ -2,7 +2,11 @@
 
 class Hunter extends Character
 {
-    protected $strength = 20;
-    protected $mana = 20;
+    public function __construct($name, $tribe)
+    {
+        parent::__construct($name, 'hunter', $tribe);
+        $this->strength = 20;
+        $this->mana = 20;
+    }
 }
 ?>
