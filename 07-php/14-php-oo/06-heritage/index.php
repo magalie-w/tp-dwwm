@@ -7,13 +7,16 @@ spl_autoload_register(function ($class) {
     // $class vaut Cat ou Dog ou Animal
     $class = str_replace('M2i\\', '', $class);
     dump($class);
+    // Pour Linux et macOS
+    $class = str_replace('\\', DIRECTORY_SEPARATOR, $class);
+
     require 'src/'.$class.'.php';
 });
 
 use M2i\Animal;
 use M2i\Cat;
 use M2i\Dog;
-use M2i\Kennel;
+use M2i\Building\Kennel;
 
 $cat = new Cat('Bianca', 'blanc');
 dump($cat);
