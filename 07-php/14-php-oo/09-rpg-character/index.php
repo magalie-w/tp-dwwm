@@ -18,18 +18,36 @@
             $character = new Hunter($_POST["name"], $_POST["tribe"]);
         }
 
+        if (isset($_POST["random"])) {
+            $character->generateName();
+        }
+
         // On affiche la valeur
-        echo "<div class='container mx-auto w-[500px]'>
-                <h1>Salut " . $character->getName() . "</h1>
-                <p>Tu es un " . $character->getClass() . " " . $character->getTribe() . "</p>
+        echo "<div class='container mx-auto w-[500px] mt-5'>
+                <div class='mx-auto w-[300px]'>
+                    <h1 class='text-xl'>Salut " . $character->getName() . "</h1>
 
-                <ul class='list-disc'>
-                    <li>Ta santé: " . $character->getHealth() . "</li>
-                    <li>Ta force: " . $character->getStrength() . "</li>
-                    <li>Ta mana: " . $character->getMana() . "</li>
-                </ul>
+                    <br>
 
-                <p>Je veux un autre personnage</p>
+                    <!-- Afficher l'img en fonction de la class séléctionnée -->
+                    <img src='img/" . $character->getClass() . ".jpg' alt='' />
+
+                    <br>
+                    
+                    <p>Tu es un " . $character->getClass() . " " . $character->getTribe() . "</p>
+
+                    <br>
+
+                    <ul class='list-disc'>
+                        <li>Ta santé: " . $character->getHealth() . "</li>
+                        <li>Ta force: " . $character->getStrength() . "</li>
+                        <li>Ta mana: " . $character->getMana() . "</li>
+                    </ul>
+
+                    <br>
+
+                    <a href='#' class='text-blue-500 underline'>Je veux un autre personnage</a>
+                </div>
             </div>";
     }
 ?>
@@ -44,7 +62,6 @@
 </head>
 
 <body>
-
     <div class="container mx-auto w-[500px] space-y-5 mt-5">
         <h1 class="text-xl text-center">POO RPG</h1>
 
@@ -77,13 +94,13 @@
                 </div>
 
                 <div>
-                    <input type="radio" id="magician" name="class" value="magician" checked>
+                    <input type="radio" id="magician" name="class" value="magician">
                     <label for="magician">Mage</label>
                     <img src=img/magician.jpg alt="" />
                 </div>
 
                 <div>
-                    <input type="radio" id="hunter" name="class" value="hunter" checked>
+                    <input type="radio" id="hunter" name="class" value="hunter">
                     <label for="hunter">Chasseur</label>
                     <img src="img/hunter.jpg" alt="" />
                 </div>
