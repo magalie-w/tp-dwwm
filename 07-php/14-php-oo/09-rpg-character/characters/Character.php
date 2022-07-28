@@ -21,7 +21,7 @@ abstract class Character
 
     public function generateName()
     {
-        $this->name = $this->generateName[rand(0, 24)];
+        $this->name = $this->generateName[rand(0, 26)];
     }
 
 
