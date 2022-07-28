@@ -9,6 +9,7 @@ abstract class Character
     protected $strength;
     protected $mana;
     protected $generateName = ["Arthur", "Bertrand", "Camille", "Denise", "Elodie", "Fabien", "Gaëtant", "Henri", "Ivan", "Justin", "Katy", "Luck", "Margaux", "Nathan", "Ophélie", "Pascale", "Quentin", "Thibaut", "Ulrich", "Valentin", "Wally", "Xavier", "Yann", "Zoé"];
+    protected $errors = [];
 
     // On créer l'objet
     public function __construct($name, $class, $tribe)
@@ -19,11 +20,29 @@ abstract class Character
         $this->tribe = $tribe;
     }
 
+    // Générer un nom random
     public function generateName()
     {
         $this->name = $this->generateName[rand(0, 26)];
     }
 
+    // errors
+    public function errors()
+    {
+        if (empty($this->name)) {
+            $this->errors[] = "Veuillez choisir un nom ou en générer un aléatoire.";
+        }
+
+        if (empty($this->tribe)) {
+            $this->errors[] = "Veuillez choisir une tribu";
+        }
+
+        if (empty($this->class)) {
+            $this->errors[] = "Veuillez choisir une classe";
+        }
+
+        return $this->errors;
+    }
 
     // On récupère la valeur de la varibale (protected)
     public function getName()

@@ -46,10 +46,11 @@
 
                     <br>
 
-                    <a href='#' class='text-blue-500 underline'>Je veux un autre personnage</a>
+                    <a href='index.php' class='text-blue-500 underline'>Je veux un autre personnage</a>
                 </div>
             </div>";
     }
+
 ?>
 
 <!DOCTYPE html>
@@ -64,6 +65,16 @@
 <body>
     <div class="container mx-auto w-[500px] space-y-5 mt-5">
         <h1 class="text-xl text-center">POO RPG</h1>
+
+        <?php if (!empty($_POST)) { ?>
+            <ul class="bg-red-300 p-2 rounded">
+                <?php foreach ($character->errors() as $error) { ?>        
+                    <li> 
+                        <?php echo $error; ?>
+                    </li> 
+                <?php } ?>
+            </ul>
+        <?php } ?>
 
         <form action="" method="post" class="space-y-5">
 
@@ -88,7 +99,7 @@
 
             <div class="flex justify-around space-x-9">
                 <div>
-                    <input type="radio" id="warrior" name="class" value="warrior" checked>
+                    <input type="radio" id="warrior" name="class" value="warrior">
                     <label for="warrior">Guerrier</label>
                     <img src="img/warrior.jpg" alt="" />
                 </div>
