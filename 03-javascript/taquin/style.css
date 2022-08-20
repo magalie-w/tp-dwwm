@@ -26,84 +26,107 @@ body{
 .general{
     box-sizing: border-box;
     position: absolute;
+    background-image: url(chaton.jpg);
+    background-size: 400px;
 }
 
 .case1{
     top: 0;
     left: 0;
+    background-position: 0 0;
 }
 
 .case2{
     top:0;
     left:100px;
+    background-position: -100px 0;
 }
 
 .case3{
     top:0;
     left:200px;
+    background-position: -200px 0;
 }
 
 .case4{
     top:0;
     left:300px;
+    background-position: -300px 0;
 }
 
 .case5{
     top:100px;
     left:0;
+    background-position: 0 -100px;
 }
 
 .case6{
     top:100px;
     left:100px;
+    background-position: -100px -100px;
 }
 
 .case7{
     top:100px;
     left:200px;
+    background-position: -200px -100px;
 }
 
 .case8{
     top:100px;
     left:300px;
+    background-position: -300px -100px;
 }
 
 .case9{
     top:200px;
     left:0;
+    background-position: 0 -200px;
 }
 
 .case10{
     top:200px;
     left:100px;
+    background-position: -100px -200px;
 }
 
 .case11{
     top:200px;
     left:200px;
+    background-position: -200px -200px;
 }
 
 .case12{
     top:200px;
     left:300px;
+    background-position: -300px 200px;
 }
 
 .case13{
     top:300px;
     left:0;
+    background-position: 0 -300px;
 }
 
 .case14{
     top:300px;
     left:100px;
+    background-position: -100px -300px;
 }
 
 .case15{
     top:300px;
     left:200px;
+    background-position: -200px -300px;
 }
 
 .case16{
     top:300px;
     left:300px;
+    background-position: -300px -300px;
+}
+
+.caseVide {
+    background-color: turquoise;
+    background-image: none;
 }
