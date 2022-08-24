@@ -14,7 +14,7 @@
                 <li>
                     <a class="px-4" href="<?= BASE_URL; ?>/">Accueil</a>
                     <a class="px-4" href="<?= BASE_URL; ?>/book">Liste des livres</a>
-                    <a class="px-4" href="<?= BASE_URL; ?>/book">Ajouter un livre</a>
+                    <a class="px-4" href="<?= BASE_URL; ?>/book/create">Ajouter un livre</a>
                 </li>
             </ul>
         </div>
