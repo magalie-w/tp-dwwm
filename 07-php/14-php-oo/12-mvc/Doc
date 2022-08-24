@@ -1,5 +1,0 @@
-composer init
-
-si on a modifié une ligne dans l'autoload - > commposer dump-autoload
-
-dumper symfony -> composer require symfony/var-dumper --dev

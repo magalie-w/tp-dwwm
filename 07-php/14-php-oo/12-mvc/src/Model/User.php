@@ -2,9 +2,9 @@
 
 namespace M2i\Mvc\Model;
 
-class User
+class User extends Model
 {
-    public $id;
-    public $name;
-    public $email;
+    protected $id;
+    protected $name;
+    protected $email;
 }

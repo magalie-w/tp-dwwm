@@ -1,5 +1,5 @@
 {
-    "name": "magalie/12-mvc",
+    "name": "matthieu/12-mvc",
     "autoload": {
         "psr-4": {
             "M2i\\Mvc\\": "src/"
@@ -7,12 +7,15 @@
     },
     "authors": [
         {
-            "name": "magalie",
-            "email": "magalie.waligora@gmail.com"
+            "name": "Matthieu Mota",
+            "email": "matthieumota@gmail.com"
         }
     ],
     "require-dev": {
-        "symfony/var-dumper": "^6.1",
+        "symfony/var-dumper": "^6.0",
         "robmorgan/phinx": "^0.12.12"
+    },
+    "require": {
+        "altorouter/altorouter": "^2.0"
     }
 }
