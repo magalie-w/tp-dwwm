@@ -1,0 +1,22 @@
+{
+    "name": "matthieu/book-mvc",
+    "autoload": {
+        "psr-4": {
+            "Book\\Mvc\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Matthieu Mota",
+            "email": "matthieumota@gmail.com"
+        }
+    ],
+    "require-dev": {
+        "symfony/var-dumper": "^6.0",
+        "robmorgan/phinx": "^0.12.12",
+        "fakerphp/faker": "^1.20"
+    },
+    "require": {
+        "altorouter/altorouter": "^2.0"
+    }
+}
