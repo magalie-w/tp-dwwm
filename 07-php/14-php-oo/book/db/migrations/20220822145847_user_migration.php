@@ -13,7 +13,7 @@ final class UserMigration extends AbstractMigration
             ->addColumn('isbn', 'string')
             ->addColumn('autor', 'string')
             ->addColumn('date', 'date')
-            ->addColumn('img', 'string')
+            ->addColumn('img', 'string', ['null' => true])
             ->create();
     }
 }

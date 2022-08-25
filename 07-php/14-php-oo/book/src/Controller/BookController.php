@@ -14,7 +14,6 @@ class BookController extends Controller
 
         return View::render('book/list', [
             'books' => $books,
-            'name' => '',
         ]);
     }
 
@@ -37,6 +36,7 @@ class BookController extends Controller
         $book->autor = $_POST['autor'] ?? null;
         $book->date = $_POST['date'] ?? null;
         $book->isbn = $_POST['isbn'] ?? null;
+        $book->img = $_POST['img'] ?? null;
         $errors = [];
         $success = false;
 
@@ -57,7 +57,7 @@ class BookController extends Controller
                 $errors['date'] = 'La date est invalide.';
             }
 
-            if (empty($book->isnbn)) {
+            if (empty($book->isbn)) {
                 $errors['isbn'] = 'L\'isbn est invalide.';
             }
 
@@ -67,6 +67,57 @@ class BookController extends Controller
         }
 
         return View::render('book/create', [
+            'errors' => $errors,
+            'success' => $success,
+        ]);
+    }
+
+    public function edit($id)
+    {
+        $book = Book::find($id);
+
+        if (! $book) {
+            return $this->notFound();
+        }
+
+        $errors = [];
+        $success = false;
+
+        if (!empty($_POST)) {
+            $book->name = $_POST['name'] ?? null;
+            $book->priceHT = $_POST['priceHT'] ?? null;
+            $book->autor = $_POST['autor'] ?? null;
+            $book->date = $_POST['date'] ?? null;
+            $book->isbn = $_POST['isbn'] ?? null;
+            // $book->img = $_POST['img'] ?? null;
+
+            if (empty($book->name)) {
+                $errors['name'] = 'Le nom est invalide.';
+            }
+
+            if (empty($book->priceHT)) {
+                $errors['priceHT'] = 'Le prix est invalide.';
+            }
+
+            if (empty($book->autor)) {
+                $errors['autor'] = 'L\'auteur est invalide.';
+            }
+
+            if (empty($book->date)) {
+                $errors['date'] = 'La date est invalide.';
+            }
+
+            if (empty($book->isbn)) {
+                $errors['isbn'] = 'L\'isbn est invalide.';
+            }
+
+            if (empty($errors)) {
+                $success = $book->update();
+            }
+        }
+
+        return View::render('book/edit', [
+            'book' => $book,
             'errors' => $errors,
             'success' => $success,
         ]);
