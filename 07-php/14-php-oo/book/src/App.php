@@ -12,9 +12,8 @@ class App extends \AltoRouter
         if (is_array($match)) {
             [$controller, $method] = explode('@', $match['target']);
             $controller = 'M2i\\Mvc\\Controller\\'.$controller;
-            $call = new $controller(); // $call = new M2i\Mvc\Controller\UserController()
-            // fn(...[1, 2, 3]) devient fn(1, 2, 3)
-            $call->$method(...$match['params']); // $call->list();
+            $call = new $controller();
+            $call->$method(...$match['params']);
         } else {
             View::notFound();
         }

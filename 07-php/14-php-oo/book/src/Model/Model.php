@@ -38,17 +38,24 @@ class Model
         return DB::insert($sql, array_values($this->attributes));
     }
 
+    public function update()
+    {
+        $table = self::getTable();
+
+        $values = implode(', ', array_map(function ($attribute) {
+            return $attribute. ' = ?';
+        }, array_keys($this->attributes)));
+
+        $sql = "UPDATE $table SET $values WHERE id = ?";
+        $this->attributes['id'] = $this->id;
+        return DB::update($sql, array_values($this->attributes));
+    }
+
     public static function all()
     {
         $table = self::getTable();
 
         $sql = "SELECT * FROM $table";
-
-        // static::class => User
-        // self::class => Model
-        // On passe la classe du modèle pour
-        // récupérer une liste d'objets
-
         return DB::select($sql, [], static::class);
     }
 
@@ -68,4 +75,7 @@ class Model
     {
         return strtolower(substr(strrchr(get_called_class(), '\\'), 1)).'s';
     }
+
+    
+    
 }

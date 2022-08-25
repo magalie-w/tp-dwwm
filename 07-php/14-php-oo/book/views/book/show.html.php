@@ -2,7 +2,7 @@
 
     <div class="max-w-5xl mx-auto flex space-x-4">
         
-        <a class="px-4" href="<?= BASE_URL; ?>/book">Retour</a>
+    <a class="ml-[510px]" href="<?= BASE_URL; ?>/book">	&#8592; Retour</a>
         
         <div>
             <img src="../img/<?= $book->img; ?>" alt=""/>
