@@ -122,4 +122,11 @@ class BookController extends Controller
             'success' => $success,
         ]);
     }
+
+    public function delete($id)
+    {
+        Book::delete($id);
+
+        $this->redirect(BASE_URL.'/book');
+    }
 }

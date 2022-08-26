@@ -34,7 +34,7 @@
                         </div>
 
                         <div>
-                            <a href="<?= BASE_URL; ?>/book/<?= $book->id; ?>/edit">
+                            <a href="<?= BASE_URL; ?>/book/<?= $book->id; ?>/delete">
                                 <button class="bg-zinc-300 p-3 border rounded">Supprimer</button>
                             </a>
                         </div>

@@ -24,6 +24,7 @@ class Model
         return $this->__get($attribute);
     }
 
+    // Save pour quand on ajoute une colonne à la table
     public function save()
     {
         $table = self::getTable();
@@ -38,6 +39,7 @@ class Model
         return DB::insert($sql, array_values($this->attributes));
     }
 
+    // Mets à jour la table
     public function update()
     {
         $table = self::getTable();
@@ -66,6 +68,16 @@ class Model
         $sql = "SELECT * FROM $table WHERE id = :id";
 
         return DB::selectOne($sql, ['id' => $id], static::class);
+    }
+
+    // Delete un book
+    public static function delete($id)
+    {
+        $table = self::getTable();
+
+        $sql = "DELETE FROM $table WHERE id = :id";
+
+        return DB::delete($sql, ['id' => $id], static::class);
     }
 
     /**
