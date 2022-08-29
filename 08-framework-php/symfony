@@ -1,0 +1,10 @@
+DOSSIER PHP HORS WWW
+sudo ln -s /home/magalie/Bureau/chemin/vers/le/dossier /var/www/html/nomURL
+DELETE -> sudo rm /var/www/html
+
+SYMFONY
+
+symfony new discover-symfony --webapp
+symfony serve
+
+php bin/console
