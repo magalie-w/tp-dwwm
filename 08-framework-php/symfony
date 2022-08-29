@@ -8,3 +8,5 @@ symfony new discover-symfony --webapp
 symfony serve
 
 php bin/console
+
+composer install
