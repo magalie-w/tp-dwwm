@@ -7,6 +7,6 @@ SYMFONY
 symfony new discover-symfony --webapp
 symfony serve
 
-php bin/console
+php bin/console make:controller NomController
 
 composer install
