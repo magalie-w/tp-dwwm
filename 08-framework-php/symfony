@@ -5,13 +5,7 @@ DELETE -> sudo rm /var/www/html
 SYMFONY
 
 symfony new discover-symfony --webapp
-sudo apt install symfony-cli
-composer require annotations
-composer require annotations
 symfony serve
-
-Page base.html -> Tout le contenus
-Page home.html.twig -> A créer pour afficher le contenu 
 
 php bin/console make:controller NomController
 
