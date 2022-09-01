@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <a class="btn btn-secondary mb-5" href="{{ path('app_phone_new') }}">Créer un produit</a>
+
+    <div class="row">
+        {% for product in products %}
+            <div class="col-lg-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="card-title">
+                            {{ product.name }}
+                            {% if product.category %}
+                                ({{ product.category.name }})
+                            {% endif %}
+                        </h2>
+                        <a class="btn btn-primary" href="{{ path('app_phone_show', { id: product.id }) }}">
+                            Voir
+                        </a>
+                        <a class="btn btn-warning" href="{{ path('app_phone_edit', { id: product.id }) }}">Modifier</a>
+
+                        <form class="d-inline" action="{{ path('app_phone_delete', { id: product.id }) }}" method="post">
+                            <input type="hidden" name="csrf" value="{{ csrf_token('delete-product') }}">
+                            <button class="btn btn-danger">X</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
