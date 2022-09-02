@@ -1,0 +1,10 @@
+FRAMEWORKS JS
+npm install
+
+créer l'api -> npm install -g json-server
+
+lancer l'api server -> json-server db.json
+
+lancer l'app -> npm start
+
+installer axios -> npm install axios
