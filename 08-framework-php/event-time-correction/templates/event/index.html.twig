@@ -1,0 +1,63 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Evénements - {{ parent() }}
+{% endblock %}
+
+{% block body %}
+    <h1 class="my-6 text-2xl text-center">{{ incoming }} événement(s) à venir</h1>
+
+    <div class="max-w-3xl mx-auto my-8 divide-y divide-gray-100">
+        {% for event in events %}
+            <div class="cursor-pointer hover:bg-gray-50">
+                <a class="block px-4 py-6" href="{{ path('app_event_show', { id: event.id }) }}">
+                    {% if event.poster %}
+                        <img src="{{ asset('uploads/events/' ~ event.poster) }}" alt="{{ event.name }}">
+                    {% endif %}
+
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <h2>{{ event.name }}</h2>
+                            <p class="text-gray-400">
+                                Du {{ event.startAt.format('d/m/Y à h\\hi') }}
+                            </p>
+                            <p class="text-gray-400">
+                                Au {{ event.endAt.format('d/m/Y à h\\hi') }}
+                            </p>
+                        </div>
+
+                        <div>
+                            {% if date(event.startAt) <= date() and date(event.endAt) >= date() %}
+                                <p class="bg-yellow-500 text-white px-3 py-1 rounded-lg text-sm">En cours</p>
+                            {% elseif date(event.endAt) < date() %}
+                                <p class="bg-red-500 text-white px-3 py-1 rounded-lg text-sm">Passé</p>
+                            {% else %}
+                                <p class="bg-emerald-500 text-white px-3 py-1 rounded-lg text-sm">Futur</p>
+                            {% endif %}
+
+                            <p class="font-bold text-xl text-right">
+                                {% if event.price > 0 %}
+                                    {{ event.price | number_format(2, ',') }} €
+                                {% else %}
+                                    Gratuit !
+                                {% endif %}
+                            </p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        {% endfor %}
+    </div>
+
+    {% if page > 1 %}
+        <a href="{{ path('app_event', { page: page - 1 }) }}">Page précédente</a>
+    {% endif %}
+
+    {% for i in 1..total %}
+        <a href="{{ path('app_event', { page: i }) }}">{{ i }}</a>
+    {% endfor %}
+
+    {% if page < total %}
+        <a href="{{ path('app_event', { page: page + 1 }) }}">Page suivante</a>
+    {% endif %}
+{% endblock %}

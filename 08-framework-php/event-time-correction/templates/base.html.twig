@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{% block title %}Event Time{% endblock %}</title>
+        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+        {% block stylesheets %}
+            <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+            {{ encore_entry_link_tags('app') }}
+        {% endblock %}
+
+        {% block javascripts %}
+            <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+            {{ encore_entry_script_tags('app') }}
+        {% endblock %}
+    </head>
+    <body class="font-[Inter]">
+        <header class="border-b">
+            <div class="max-w-5xl mx-auto px-3">
+                <div class="flex items-center justify-between h-12">
+                    <a class="inline-flex items-center" href="{{ path('app_home') }}">
+                        <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5m-9-6h.008v.008H12v-.008zM12 15h.008v.008H12V15zm0 2.25h.008v.008H12v-.008zM9.75 15h.008v.008H9.75V15zm0 2.25h.008v.008H9.75v-.008zM7.5 15h.008v.008H7.5V15zm0 2.25h.008v.008H7.5v-.008zm6.75-4.5h.008v.008h-.008v-.008zm0 2.25h.008v.008h-.008V15zm0 2.25h.008v.008h-.008v-.008zm2.25-4.5h.008v.008H16.5v-.008zm0 2.25h.008v.008H16.5V15z" />
+                        </svg>
+
+                        <span class="text-lg ml-3 font-bold">Event Time</span>
+                    </a>
+
+                    <nav>
+                        <ul class="flex space-x-4">
+                            <li>
+                                <a class="text-sm {{ app.request.get('_route') == 'app_home' ? 'font-bold' }}" href="{{ path('app_home') }}">Accueil</a>
+                            </li>
+                            <li>
+                                <a class="text-sm {{ app.request.get('_route') == 'app_event' or app.request.get('_route') == 'app_event_show' ? 'font-bold' }}" href="{{ path('app_event') }}">Evénements</a>
+                            </li>
+                            <li>
+                                <a class="text-sm py-2 px-4 rounded-lg font-semibold bg-gray-900 text-white hover:bg-gray-800" href="{{ path('app_event_create') }}">Créer un événement</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+
+        <div class="max-w-5xl mx-auto px-3">
+            {% for type, messages in app.flashes %}
+                {% for message in messages %}
+                    <div class="my-5 bg-teal-100 border-t-4 border-teal-500 rounded-b text-teal-900 px-4 py-3 shadow-md">
+                        <div class="flex items-center">
+                            <div class="py-1">
+                                <svg class="fill-current h-6 w-6 text-teal-500 mr-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M2.93 17.07A10 10 0 1 1 17.07 2.93 10 10 0 0 1 2.93 17.07zm12.73-1.41A8 8 0 1 0 4.34 4.34a8 8 0 0 0 11.32 11.32zM9 11V9h2v6H9v-4zm0-6h2v2H9V5z"/></svg>
+                            </div>
+                            <div>
+                                <p class="text-sm">{{ message }}</p>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% endfor %}
+
+            <div class="my-3">
+                <form action="{{ path('app_event') }}" method="get">
+                    <div class="flex justify-center">
+                        <input name="q" value="{{ app.request.get('q') }}" type="text" class="border-gray-300 rounded-l-lg">
+                        <button class="text-sm py-2 px-4 rounded-r-lg font-semibold bg-gray-900 text-white hover:bg-gray-800">Rechercher</button>
+                    </div>
+                </form>
+            </div>
+
+            {% block body %}{% endblock %}
+        </div>
+
+        <footer>
+            <div class="max-w-5xl mx-auto px-3">
+                <p class="text-center text-sm">Copyright &copy {{ 'now' | date('Y') }} Event Time.</p>
+            </div>
+        </footer>
+    </body>
+</html>
