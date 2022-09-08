@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Social Network!{% endblock %}</title>
+        
+        {% block stylesheets %}
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+            {{ encore_entry_link_tags('app') }}
+        {% endblock %}
+
+        {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+        {% endblock %}
+    </head>
+
+    <body>
+        {% block header %}
+            <div class="d-flex">
+                <li class="list-group">
+                    <a href="{{ path('home') }}">
+                        <img src="img/booh.png" alt="logo" width="50" />
+                    </a>
+                </li>
+
+                <li class="list-group">
+                    <a href="{{ path('members') }}">
+                    <img src="img/members.svg" alt="members" width="50" />
+                </li>
+
+                <li class="list-group">
+                    <a href="">
+                    <img src="img/off.svg" alt="sign-up" width="50" />
+                </li>
+            </div>
+        {% endblock %}
+
+        {% block body %}
+        {% endblock %}
+    </body>
+</html>

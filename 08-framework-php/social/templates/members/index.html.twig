@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Members - Social Network{% endblock %}
+
+{% block header %}
+    {{ parent() }}
+{% endblock %}
+
+{% block body %}
+    <div class="d-flex">
+
+        <div>
+            <img src="avatar" alt="avatar" />
+        </div>
+
+        <div>
+            <span>Email</span>
+        </div>
+
+        <div>Prénom</div>
+
+        <div>Pseudo</div>
+
+        <div>Date de naissance</div>
+        
+        <div>Biographie</div>
+
+    </div>
+{% endblock %}
+
