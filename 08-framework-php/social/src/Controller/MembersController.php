@@ -12,7 +12,7 @@ class MembersController extends AbstractController
     public function index(): Response
     {
         return $this->render('members/index.html.twig', [
-            'controller_name' => 'MembersController',
+            'MembersController' => 'MembersController',
         ]);
     }
 }

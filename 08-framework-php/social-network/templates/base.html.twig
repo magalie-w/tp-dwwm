@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Event Time{% endblock %}</title>
+        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+        {% block stylesheets %}
+            <script src="https://cdn.tailwindcss.com"></script>
+            {{ encore_entry_link_tags('app') }}
+        {% endblock %}
+
+        {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+        {% endblock %}
+    </head>
+    <body>
+        <nav class="flex bg-zinc-300 items-center">
+            {% block header %}
+                <div class="container">
+                    <h1>Event Time</h1>
+                </div>
+
+                <div class="flex w-[500px] justify-around p-5">
+                    {% block menu %}
+                        <li class="list-none">
+                            <a href="{{ path('home') }}">Accueil</a>
+                        </li>
+
+                        <li class="list-none">
+                            <a href="{{ path('events') }}">Evenements</a>
+                        </li>
+
+                        <li class="list-none">
+                            <a href="createEvent">Créer un événement</a>
+                        </li>
+                    {% endblock %}
+                </div>
+            {% endblock %}
+        </nav>
+
+        {% block body %}
+        {% endblock %}
+    </body>
+</html>
