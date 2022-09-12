@@ -1,0 +1,12 @@
+LARAVEL
+
+Créer un projet : composer create-project laravel/laravel NomProjet
+
+Lancer server : php artisan serve
+
+Voir les erreurs : storage/logs/laravel.log
+
+Récupérer le projet : 
+- composer install
+- php -r "file_exists('.env') || copy('.env.example', '.env');"
+- php artisan key:generate
