@@ -1,12 +1,27 @@
 LARAVEL
 
-Créer un projet : composer create-project laravel/laravel NomProjet
+-Créer un projet : 
+composer create-project laravel/laravel NomProjet
 
-Lancer server : php artisan serve
+-Lancer server (back): 
+php artisan serve
 
-Voir les erreurs : storage/logs/laravel.log
+-Lancer server (front - vite)
+npm run dev
 
-Récupérer le projet : 
-- composer install
-- php -r "file_exists('.env') || copy('.env.example', '.env');"
-- php artisan key:generate
+-Voir les erreurs : 
+storage/logs/laravel.log
+
+- Récupérer le projet : 
+composer install
+php -r "file_exists('.env') || copy('.env.example', '.env');"
+php artisan key:generate
+
+npm install
+
+-Controlleur : 
+php artisan make:controller NomController
+
+-Utiliser vite pour faire du JS, CSS ect
+npm install
+

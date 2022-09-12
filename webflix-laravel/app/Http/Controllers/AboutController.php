@@ -16,6 +16,9 @@ class AboutController extends Controller
 
     public function show($user)
     {
-        return view('about-show', ['user' => $user]);
+        return view('about-show', [
+            // ucfirst pour mettre la première lettre en MAJ
+            'user' => ucfirst($user),
+        ]);
     }
 }
