@@ -25,3 +25,14 @@ php artisan make:controller NomController
 -Utiliser vite pour faire du JS, CSS ect
 npm install
 
+-BDD
+php artisan make:model Nom --migration
+php artisan migrate
+php artisan migrate:fresh -> delete les migrations
+php artisan migrate:fresh --seed -> ajoute en delete
+
+php artisan db:seed
+
+-Factory/Models
+php artisan make:factory CategoryFactory
+

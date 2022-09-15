@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-    <h1>Coucou {{ $name }}</h1>
+    <h1 class="font-bold text-3xl mb-3">Coucou {{ $name }}</h1>
 
     <!-- Ne pas avoir les balises html -->
     {!! $html !!}
@@ -16,5 +16,5 @@
         @endforeach
     </ul>
     
-    <a href="{{ url('/about') }}">A Propos</a>
+    <a href="{{ route('about') }}">A Propos</a>
 @endsection
