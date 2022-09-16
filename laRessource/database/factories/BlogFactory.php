@@ -13,13 +13,18 @@ class BlogFactory extends Factory
      * Define the model's default state.
      *
      * @return array<string, mixed>
+     * 
      */
+
     public function definition()
     {
+        $img = ['3.jpg', '4.jpg'];
+
         return [
             'title' => fake()->sentence(3),
             'description' => fake()->text(),
-            'cover' => fake()->imageUrl(),
+            // Mettre des images random
+            'cover' =>$img[array_rand($img)],
         ];
     }
 }

@@ -1,9 +1,9 @@
 import React from 'react';
 import axios from 'axios';
-import Header from './Header.js';
-import Results from './Results.js';
-import Search from './Search.js';
-import Loader from './Loader.js';
+import Header from './components/Header.js';
+import Results from './components/Results.js';
+import Search from './components/Search.js';
+import Loader from './components/Loader.js';
 import { Link, Outlet } from 'react-router-dom';
 
 class App extends React.Component {

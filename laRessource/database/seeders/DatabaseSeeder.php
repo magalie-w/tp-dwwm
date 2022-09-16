@@ -23,8 +23,14 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
 
-        for ($i = 0; $i < 10; $i++) {
-            // Blog::factory()->create(['blog_id' => $blog->random()]);
-        }
+        Blog::factory()
+        ->count(10)
+          ->create();
+
+        // Blog::factory()->create([])
+
+        // for ($i = 0; $i < 10; $i++) {
+        //     Blog::factory()->create(['blog_id' => $blog->random()]);
+        // }
     }
 }

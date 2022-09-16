@@ -2,7 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import Header from './Header.js';
 import Loader from './Loader.js';
-import { withRouter } from './index';
+import { withRouter } from '../index';
 
 class Single extends React.Component {
   constructor(props) {
@@ -20,6 +20,41 @@ class Single extends React.Component {
       this.setState({ beers: response.data[0], loading: false });
       },2000);
     });
+  }
+
+  renderIbu(beer) {
+    if (!beer.ibu) return;
+
+    let round = Math.ceil(beer.ibu * 5 / 100);
+
+    return (
+      <div>
+        <h3>Ibu {beer.ibu}</h3>
+
+        <div className='flex'>
+
+        {[1, 2, 3, 4, 5].map(
+          function (i) {
+            console.log(i,round);
+            if (i <= round) {
+              return <div className='rond' key={i}></div>;
+            }
+
+            return <div className='vide' key={i}></div>;
+
+          }
+        )}
+    
+        </div>  
+        {/* 
+            <div className='rond'></div>
+            <div className='rond'></div>
+            <div className='rond'></div>
+            <div className='rond'></div>
+            <div className='rond'></div>
+        </div> */}
+      </div>
+    );
   }
 
   render() {
@@ -74,17 +109,9 @@ class Single extends React.Component {
                             <li>Lorem ipsum</li>
                             <li>Lorem ipsum</li>
                         </ul> */}
-        
-                        <h3>Ibu {this.state.beers.ibu}</h3>
-                        {/* <h3>Ibu 41.5</h3> */}
 
-                        <div className='flex'>
-                            <div className='rond'></div>
-                            <div className='rond'></div>
-                            <div className='rond'></div>
-                            <div className='rond'></div>
-                            <div className='rond'></div>
-                        </div>
+                        {this.renderIbu(this.state.beers)}
+        
                     </div>
 
                     <div className='center'>

@@ -17,8 +17,6 @@ composer install
 php -r "file_exists('.env') || copy('.env.example', '.env');"
 php artisan key:generate
 
-npm install
-
 -Controlleur : 
 php artisan make:controller NomController
 
@@ -35,4 +33,8 @@ php artisan db:seed
 
 -Factory/Models
 php artisan make:factory CategoryFactory
+
+-Tailwind : https://tailwindcss.com/docs/guides/laravel
+npm install -D @tailwindcss/forms
+npx tailwindcss init -p
 

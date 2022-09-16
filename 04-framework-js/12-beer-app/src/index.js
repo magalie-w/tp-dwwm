@@ -2,8 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import Single from './Single';
-import Search from './Search';
+import Single from './components/Single';
+import Search from './components/Search';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Routes, Route, useParams, useNavigate } from 'react-router-dom';
 
