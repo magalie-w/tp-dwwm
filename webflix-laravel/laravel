@@ -14,6 +14,7 @@ storage/logs/laravel.log
 
 - Récupérer le projet : 
 composer install
+npm install
 php -r "file_exists('.env') || copy('.env.example', '.env');"
 php artisan key:generate
 
@@ -38,3 +39,15 @@ php artisan make:factory CategoryFactory
 npm install -D @tailwindcss/forms
 npx tailwindcss init -p
 
+JQUERY
+npm install jquery
+
+Accéder à toutes les variables du le projet dans un terminale magique
+php artisan tinker
+
+MAILDEV
+npm install -g maildev -> installation de la boite mail
+maildev -> lancer la boîte mail
+
+KEY API
+a4872679cc543a16475400119b475fb6
