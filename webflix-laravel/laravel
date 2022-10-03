@@ -25,14 +25,16 @@ php artisan make:controller NomController
 npm install
 
 -BDD
-php artisan make:model Nom --migration
 php artisan migrate
 php artisan migrate:fresh -> delete les migrations
 php artisan migrate:fresh --seed -> ajoute en delete
 
 php artisan db:seed
 
--Factory/Models
+Models
+php artisan make:model Nom --migration
+
+-Factory
 php artisan make:factory CategoryFactory
 
 -Tailwind : https://tailwindcss.com/docs/guides/laravel
